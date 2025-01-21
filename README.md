@@ -16,17 +16,12 @@ A sleek and interactive Flutter application designed to showcase your projects, 
 
 ## **Screenshots**  
 
-### Home Screen  
-![Home Screen](path_to_screenshot_1.png)  
-_Showcasing the profile overview and navigation._  
+![1](https://github.com/user-attachments/assets/8e53099e-2c5b-4eb9-8184-b2f37a18c85d)
 
-### Experience Details  
-![Project Details](path_to_screenshot_2.png)  
-_Detailed descriptions of your experience._  
+![2](https://github.com/user-attachments/assets/02524150-a61b-45b0-9eb3-6b7f5b3920d0)
 
-### Project Details  
-![Project Details](path_to_screenshot_2.png)  
-_Detailed descriptions of your projects with images and technology stack._  
+![3](https://github.com/user-attachments/assets/8d6cbf97-e549-485f-81c7-bab3a8aafb62)
+
 
 ---
 
