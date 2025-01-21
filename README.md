@@ -1,5 +1,5 @@
 
-# ** Flutter Portfolio**  
+#  Flutter Portfolio
 
 A sleek and interactive Flutter application designed to showcase your projects, skills, and professional profile. This app serves as a personal portfolio to highlight your expertise in app development and design.  
 
