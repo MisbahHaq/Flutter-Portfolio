@@ -7,8 +7,7 @@ class Module extends StatelessWidget {
   final String moduleTwo;
   final String moduleThree;
   final String moduleFour;
-  final String moduleFive;
-  final String moduleSix;
+
   Module({
     super.key,
     required this.projectName,
@@ -16,8 +15,6 @@ class Module extends StatelessWidget {
     required this.moduleTwo,
     required this.moduleThree,
     required this.moduleFour,
-    required this.moduleFive,
-    required this.moduleSix,
   });
 
   @override
@@ -126,41 +123,6 @@ class Module extends StatelessWidget {
                   ),
                   SizedBox(
                     height: 40,
-                  ),
-                  Text(
-                    "Community Interaction",
-                    style: GoogleFonts.poppins(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  Text(
-                    moduleFive,
-                    style: GoogleFonts.poppins(
-                      fontSize: 18,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.white,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 40,
-                  ),
-                  Text(
-                    "Accessibility & Localization",
-                    style: GoogleFonts.poppins(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  Text(
-                    moduleSix,
-                    style: GoogleFonts.poppins(
-                      fontSize: 18,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.white,
-                    ),
                   ),
                 ],
               ),
