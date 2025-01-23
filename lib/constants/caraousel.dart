@@ -45,6 +45,7 @@ class CaraouselBlinkit extends StatelessWidget {
           autoPlay: true,
           enlargeCenterPage: true,
           enableInfiniteScroll: true,
+          autoPlayInterval: const Duration(seconds: 2),
         ),
       ),
     );
@@ -93,36 +94,8 @@ class CaraouselAurPaisy extends StatelessWidget {
           autoPlay: true,
           enlargeCenterPage: true,
           enableInfiniteScroll: true,
+          autoPlayInterval: const Duration(seconds: 2),
         ),
-      ),
-    );
-  }
-}
-
-class CarouselMindEase extends StatelessWidget {
-  const CarouselMindEase({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final List<String> imgList1 = ["assets/images/dev.jpg"];
-    return Center(
-      child: CarouselSlider(
-        items: [1, 2, 3].map((i) {
-          return Container(
-            width: MediaQuery.of(context).size.width,
-            margin: EdgeInsets.symmetric(horizontal: 5),
-            decoration: BoxDecoration(
-              color: Colors.amber,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Center(
-              child: Image.asset(
-                'assets/images/dev.jpg',
-              ),
-            ),
-          );
-        }).toList(),
-        options: CarouselOptions(height: 300),
       ),
     );
   }

@@ -4,16 +4,24 @@ import "package:google_fonts/google_fonts.dart";
 class Module extends StatelessWidget {
   final String projectName;
   final String moduleOne;
+  final String module1Name;
   final String moduleTwo;
+  final String module2Name;
   final String moduleThree;
+  final String module3Name;
   final String moduleFour;
+  final String module4Name;
 
   Module({
     super.key,
     required this.projectName,
+    required this.module1Name,
     required this.moduleOne,
+    required this.module2Name,
     required this.moduleTwo,
+    required this.module3Name,
     required this.moduleThree,
+    required this.module4Name,
     required this.moduleFour,
   });
 
@@ -49,7 +57,7 @@ class Module extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Core Features",
+                    module1Name,
                     style: GoogleFonts.poppins(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -68,7 +76,7 @@ class Module extends StatelessWidget {
                     height: 40,
                   ),
                   Text(
-                    "User Engagement",
+                    module2Name,
                     style: GoogleFonts.poppins(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -87,7 +95,7 @@ class Module extends StatelessWidget {
                     height: 40,
                   ),
                   Text(
-                    "Analytics & Insights",
+                    module3Name,
                     style: GoogleFonts.poppins(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -106,7 +114,7 @@ class Module extends StatelessWidget {
                     height: 40,
                   ),
                   Text(
-                    "Content Personalization",
+                    module4Name,
                     style: GoogleFonts.poppins(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,

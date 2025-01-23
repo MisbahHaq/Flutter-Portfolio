@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      "Flutter Developer & Software Engineer",
+                      "Developer & Software Engineer",
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
