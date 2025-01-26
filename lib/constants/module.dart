@@ -4,25 +4,27 @@ import "package:google_fonts/google_fonts.dart";
 class Module extends StatelessWidget {
   final String projectName;
   final String moduleOne;
+  final String moduleImgOne;
   final String module1Name;
   final String moduleTwo;
+  final String moduleImgTwo;
   final String module2Name;
   final String moduleThree;
+  final String moduleImgThree;
   final String module3Name;
-  final String moduleFour;
-  final String module4Name;
 
   Module({
     super.key,
     required this.projectName,
     required this.module1Name,
+    required this.moduleImgOne,
     required this.moduleOne,
     required this.module2Name,
+    required this.moduleImgTwo,
     required this.moduleTwo,
     required this.module3Name,
+    required this.moduleImgThree,
     required this.moduleThree,
-    required this.module4Name,
-    required this.moduleFour,
   });
 
   @override
@@ -64,6 +66,15 @@ class Module extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    child: Center(child: Image.asset(moduleImgOne)),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Text(
                     moduleOne,
                     style: GoogleFonts.poppins(
@@ -82,6 +93,15 @@ class Module extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    child: Center(child: Image.asset(moduleImgTwo)),
+                  ),
+                  SizedBox(
+                    height: 10,
                   ),
                   Text(
                     moduleTwo,
@@ -102,27 +122,17 @@ class Module extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
-                  Text(
-                    moduleThree,
-                    style: GoogleFonts.poppins(
-                      fontSize: 18,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.white,
-                    ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    child: Center(child: Image.asset(moduleImgThree)),
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 10,
                   ),
                   Text(
-                    module4Name,
-                    style: GoogleFonts.poppins(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  Text(
-                    moduleFour,
+                    moduleThree,
                     style: GoogleFonts.poppins(
                       fontSize: 18,
                       fontWeight: FontWeight.normal,

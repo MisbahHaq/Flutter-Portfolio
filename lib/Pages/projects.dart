@@ -73,18 +73,18 @@ class ProjectPage extends StatelessWidget {
                       MaterialPageRoute(
                         builder: (context) => Module(
                           projectName: "Blinkt-it",
-                          module1Name: "Core Features",
+                          module1Name: "Entensive Catalogue",
+                          moduleImgOne: "assets/images/11.jpg",
                           moduleOne:
                               "Displays a categorized catalog of products, including groceries, kitchen items, and festive essentials.",
-                          module2Name: "User Engagement",
+                          module2Name: "Exclusive Offers",
+                          moduleImgTwo: "assets/images/22.jpg",
                           moduleTwo:
                               "Includes interactive and user-friendly interfaces for ease of use.",
-                          module3Name:
-                              "Seamless navigation between sections with dynamic content rendering.",
-                          moduleThree: "Analytics & Insights",
-                          module4Name: "Content Personalization",
-                          moduleFour:
-                              "Integrates interactive banners and horizontal scroll views for browsing promotions and products.",
+                          module3Name: "Print Store",
+                          moduleImgThree: "assets/images/44.jpg",
+                          moduleThree:
+                              "Blinkit ensures secure prints at every stage",
                         ),
                       ),
                     );
@@ -142,19 +142,19 @@ class ProjectPage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => Module(
-                            projectName: "AurPaisy",
-                            module1Name: "Core Features",
-                            moduleOne:
-                                "Handles user accounts, transactions, and expense tracking.",
-                            module2Name: "User Engagement",
-                            moduleTwo:
-                                "Clean, modular codebase with a secure database for financial data.",
-                            module3Name: "Analyticsd & Insights",
-                            moduleThree:
-                                "Offers transaction history, friend transfers, and notifications.",
-                            module4Name: "Content Personalization",
-                            moduleFour:
-                                "Includes interactive and user-friendly interfaces for ease of use."),
+                          projectName: "AurPaisy",
+                          module1Name: "Core Features",
+                          moduleImgOne: "assets/images/b1.png",
+                          moduleOne:
+                              "Handles user accounts, transactions, and expense tracking.",
+                          module2Name: "User Engagement",
+                          moduleTwo:
+                              "Offers transaction history, friend transfers, and notifications.",
+                          moduleImgTwo: "assets/images/b2.png",
+                          module3Name: "Analyticsd & Insights",
+                          moduleImgThree: "assets/images/b3.png",
+                          moduleThree: "Offers Built-in Expense Tracking",
+                        ),
                       ),
                     );
                   },
