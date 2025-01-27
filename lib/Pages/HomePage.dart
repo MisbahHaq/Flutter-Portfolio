@@ -8,62 +8,65 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 80),
-            child: Column(
-              children: [
-                Text(
-                  "Hi There!",
-                  style: GoogleFonts.poppins(
-                    color: const Color.fromARGB(255, 59, 59, 61),
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  "I'm Misbah Haq",
-                  style: GoogleFonts.poppins(
-                    color: const Color.fromARGB(255, 59, 59, 61),
-                    fontSize: 27,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      "Developer & Software Engineer",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black54),
+      child: Container(
+        color: Colors.white,
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 80),
+              child: Column(
+                children: [
+                  Text(
+                    "Hi There!",
+                    style: GoogleFonts.poppins(
+                      color: const Color.fromARGB(255, 59, 59, 61),
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
                     ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Icon(FontAwesomeIcons.twitter, size: 30),
-                    SizedBox(width: 15),
-                    Icon(FontAwesomeIcons.instagram, size: 30),
-                    SizedBox(width: 15),
-                    Icon(FontAwesomeIcons.linkedin, size: 30),
-                    SizedBox(width: 15),
-                    Icon(FontAwesomeIcons.squareUpwork, size: 30),
-                  ],
-                ),
-              ],
+                  ),
+                  Text(
+                    "I'm Misbah Haq",
+                    style: GoogleFonts.poppins(
+                      color: const Color.fromARGB(255, 59, 59, 61),
+                      fontSize: 27,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Developer & Software Engineer",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.black54),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Icon(FontAwesomeIcons.twitter, size: 30),
+                      SizedBox(width: 15),
+                      Icon(FontAwesomeIcons.instagram, size: 30),
+                      SizedBox(width: 15),
+                      Icon(FontAwesomeIcons.linkedin, size: 30),
+                      SizedBox(width: 15),
+                      Icon(FontAwesomeIcons.squareUpwork, size: 30),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-          const SizedBox(height: 50),
-          Image.asset(
-            "assets/images/devv.jpg",
-            height: 250,
-          ),
-        ],
+            const SizedBox(height: 50),
+            Image.asset(
+              "assets/images/devv.jpg",
+              height: 250,
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -31,7 +31,7 @@ class AboutPage extends StatelessWidget {
           ),
           child: Container(
             padding: const EdgeInsets.all(30),
-            color: const Color(0xFFC2B2B4),
+            color: Color(0xff0c2948),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -53,7 +53,7 @@ class AboutPage extends StatelessWidget {
                   child: Text(
                     "Get In Touch With Me",
                     style: GoogleFonts.poppins(
-                      color: const Color.fromARGB(255, 59, 59, 61),
+                      color: Colors.white,
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
                     ),
@@ -137,7 +137,7 @@ class AboutPage extends StatelessWidget {
                 Text(
                   "Hobbies",
                   style: GoogleFonts.poppins(
-                    color: const Color.fromARGB(255, 59, 59, 61),
+                    color: Colors.white,
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                   ),
