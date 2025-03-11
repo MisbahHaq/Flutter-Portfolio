@@ -18,7 +18,7 @@ class _CaraouselFirstState extends State<CaraouselFirst> {
     super.initState();
     final List<String> videoList = [
       "assets/videos/0303.mp4",
-      "assets/videos/0303.mp4",
+      "assets/videos/0307.mp4",
       "assets/videos/0303.mp4",
     ];
 
