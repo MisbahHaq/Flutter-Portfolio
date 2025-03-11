@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/WidgetSupport.dart';
+import 'package:portfolio/caraousel.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({super.key});
@@ -28,7 +29,7 @@ class SecondPage extends StatelessWidget {
             width: 550,
             height: 690,
             decoration: BoxDecoration(color: Colors.grey),
-            child: Column(),
+            child: Column(children: [CaraouselFirst()]),
           ),
         ],
       ),
