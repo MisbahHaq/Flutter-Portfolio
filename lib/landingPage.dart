@@ -53,7 +53,7 @@ class _LandingPageState extends State<LandingPage> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Container(
-                            child: Text("M———H", style: AppWidget.BigStyle()),
+                            child: Text("M——H", style: AppWidget.BigStyle()),
                           ),
                         ],
                       ),
