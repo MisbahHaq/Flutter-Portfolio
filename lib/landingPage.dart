@@ -49,9 +49,7 @@ class _LandingPageState extends State<LandingPage> {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 2,
-                  ), // Reduced space between "Misbah" and "Haque"
+                  SizedBox(height: 2),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
