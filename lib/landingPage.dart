@@ -69,23 +69,18 @@ class _LandingPageState extends State<LandingPage> {
                                 style: AppWidget.HugeStyle(),
                               ),
                             ),
-                            // Wrap the "Web & App Development" text in a Flexible widget
+
                             Flexible(
                               child: Padding(
                                 padding: EdgeInsets.only(
-                                  right:
-                                      screenWidth > 600
-                                          ? 200
-                                          : 30, // Adjust based on screen width
+                                  right: screenWidth > 600 ? 200 : 30,
                                   top: 20,
                                 ),
                                 child: Text(
                                   "Web & App Development",
                                   style: AppWidget.MidStyle(),
-                                  overflow:
-                                      TextOverflow.ellipsis, // Avoid overflow
-                                  maxLines:
-                                      1, // Make sure the text doesn't overflow
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 1,
                                 ),
                               ),
                             ),
