@@ -23,6 +23,16 @@ class AppWidget {
     );
   }
 
+  static TextStyle AlternateSmallerStyle() {
+    return GoogleFonts.montserrat(
+      textStyle: TextStyle(
+        color: Colors.white,
+        fontSize: 15,
+        fontWeight: FontWeight.normal,
+      ),
+    );
+  }
+
   static TextStyle MidStyle() {
     return GoogleFonts.poppins(
       textStyle: TextStyle(
@@ -67,7 +77,7 @@ class AppWidget {
     return GoogleFonts.poppins(
       textStyle: TextStyle(
         color: Colors.black,
-        fontSize: 50,
+        fontSize: 30,
         fontWeight: FontWeight.w300,
       ),
     );
