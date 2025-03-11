@@ -38,10 +38,7 @@ class _LandingPageState extends State<LandingPage> {
                         child: Text("Misbah", style: AppWidget.HugeStyle()),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(
-                          right: 200,
-                          top: 20,
-                        ), // Reduced top padding for better alignment
+                        padding: EdgeInsets.only(right: 200, top: 20),
                         child: Text(
                           "Web & App Development",
                           style: AppWidget.MidStyle(),
