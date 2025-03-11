@@ -25,6 +25,7 @@ class FirstPage extends StatelessWidget {
               SizedBox(width: 90),
             ],
           ),
+          SizedBox(height: 90),
           Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

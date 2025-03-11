@@ -47,7 +47,7 @@ class AppWidget {
     return GoogleFonts.poppins(
       textStyle: TextStyle(
         color: Colors.black,
-        fontSize: 37,
+        fontSize: 40,
         fontWeight: FontWeight.w500,
       ),
     );
