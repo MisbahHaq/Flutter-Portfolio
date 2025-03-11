@@ -15,7 +15,7 @@ class FirstPage extends StatelessWidget {
             children: [
               SizedBox(width: 90), // Padding for left side
               Text("01", style: AppWidget.SmallStyle()),
-              SizedBox(width: 90), // Space between "01" and the next text
+              SizedBox(width: 90),
               Text(
                 "ELEVATING DIGITAL EXPERIENCES",
                 style: AppWidget.SmallStyle(),
