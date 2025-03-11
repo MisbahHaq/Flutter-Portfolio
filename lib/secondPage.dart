@@ -8,7 +8,6 @@ class SecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(color: Colors.black),
       child: Column(
         children: [
           SizedBox(height: 90),
@@ -27,9 +26,9 @@ class SecondPage extends StatelessWidget {
           SizedBox(height: 90),
           Container(
             width: 550,
-            height: 690,
+            height: 500,
             decoration: BoxDecoration(color: Colors.grey),
-            child: Column(children: [SizedBox(height: 150), CaraouselFirst()]),
+            child: Column(children: [SizedBox(height: 100), CaraouselFirst()]),
           ),
         ],
       ),

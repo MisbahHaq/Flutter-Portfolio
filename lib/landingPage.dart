@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/WidgetSupport.dart';
 import 'package:portfolio/firstPage.dart';
+import 'package:portfolio/secondPage.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -10,10 +11,40 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  final ScrollController _scrollController = ScrollController();
+  Color _bgColor = Colors.transparent;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(_scrollListener);
+  }
+
+  @override
+  void dispose() {
+    _scrollController.removeListener(_scrollListener);
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  void _scrollListener() {
+    if (_scrollController.offset > 1500) {
+      setState(() {
+        _bgColor = Colors.black;
+      });
+    } else {
+      setState(() {
+        _bgColor = Colors.transparent;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: _bgColor,
       body: SingleChildScrollView(
+        controller: _scrollController,
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
@@ -57,6 +88,8 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                   SizedBox(height: 110),
                   FirstPage(),
+                  SizedBox(height: 350),
+                  SecondPage(),
                 ],
               ),
             ),

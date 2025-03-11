@@ -19,7 +19,8 @@ class _CaraouselFirstState extends State<CaraouselFirst> {
     final List<String> videoList = [
       "assets/videos/0303.mp4",
       "assets/videos/0307.mp4",
-      "assets/videos/0303.mp4",
+      "assets/videos/foodgo.mp4",
+      "assets/videos/megamart.mp4",
     ];
 
     _controllers =
@@ -37,7 +38,6 @@ class _CaraouselFirstState extends State<CaraouselFirst> {
   @override
   void dispose() {
     super.dispose();
-    // Dispose all video controllers when the widget is disposed.
     for (var controller in _controllers) {
       controller.dispose();
     }
@@ -68,11 +68,7 @@ class _CaraouselFirstState extends State<CaraouselFirst> {
           enableInfiniteScroll: true,
           autoPlayInterval: const Duration(seconds: 2),
           onPageChanged: (index, reason) {
-            if (_currentIndex != index) {
-              // Pause the previous video when moving to a new slide
-              _controllers[_currentIndex].pause();
-            }
-            // Start playing the new video
+            if (_currentIndex != index) {}
             _controllers[index].play();
             _currentIndex = index;
           },
