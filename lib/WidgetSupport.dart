@@ -33,6 +33,16 @@ class AppWidget {
     );
   }
 
+  static TextStyle AlternateMidStyle() {
+    return GoogleFonts.poppins(
+      textStyle: TextStyle(
+        color: Colors.white,
+        fontSize: 30,
+        fontWeight: FontWeight.w200,
+      ),
+    );
+  }
+
   static TextStyle BigStyle() {
     return GoogleFonts.poppins(
       textStyle: TextStyle(

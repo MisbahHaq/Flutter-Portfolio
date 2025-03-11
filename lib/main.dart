@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/firstPage.dart';
 import 'package:portfolio/landingPage.dart';
 import 'package:portfolio/secondPage.dart';
+import 'package:portfolio/thirdPage.dart';
 
 void main() {
   runApp(const MyApp());

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/WidgetSupport.dart';
 import 'package:portfolio/firstPage.dart';
 import 'package:portfolio/secondPage.dart';
+import 'package:portfolio/thirdPage.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -61,7 +62,20 @@ class _LandingPageState extends State<LandingPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text("M——H", style: AppWidget.BigStyle()),
-                              Text("MENU", style: AppWidget.BigStyle()),
+                              GestureDetector(
+                                onTap: () {
+                                  showModalBottomSheet(
+                                    context: context,
+                                    builder: (context) {
+                                      return Column();
+                                    },
+                                  );
+                                },
+                                child: Text(
+                                  "MENU",
+                                  style: AppWidget.BigStyle(),
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -102,6 +116,8 @@ class _LandingPageState extends State<LandingPage> {
                         FirstPage(),
                         SizedBox(height: 350),
                         SecondPage(),
+                        SizedBox(height: 90),
+                        ThirdPage(),
                       ],
                     ),
                   ),

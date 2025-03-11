@@ -14,7 +14,6 @@ class FirstPage extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: screenHeight * 0.1),
-          // First Row containing the "01", "ELEVATING DIGITAL EXPERIENCES", and "OUR STUDIO"
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -30,8 +29,6 @@ class FirstPage extends StatelessWidget {
             ],
           ),
           SizedBox(height: screenHeight * 0.1),
-
-          // Second part where the "We craft elegant websites..." text will be placed below the header
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
