@@ -13,6 +13,16 @@ class AppWidget {
     );
   }
 
+  static TextStyle AlternateSmallStyle() {
+    return GoogleFonts.poppins(
+      textStyle: TextStyle(
+        color: Colors.white,
+        fontSize: 19,
+        fontWeight: FontWeight.w500,
+      ),
+    );
+  }
+
   static TextStyle MidStyle() {
     return GoogleFonts.poppins(
       textStyle: TextStyle(
@@ -47,6 +57,16 @@ class AppWidget {
     return GoogleFonts.poppins(
       textStyle: TextStyle(
         color: Colors.black,
+        fontSize: 40,
+        fontWeight: FontWeight.w500,
+      ),
+    );
+  }
+
+  static TextStyle AlternateHeroStyle() {
+    return GoogleFonts.poppins(
+      textStyle: TextStyle(
+        color: Colors.white,
         fontSize: 40,
         fontWeight: FontWeight.w500,
       ),
