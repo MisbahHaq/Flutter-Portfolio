@@ -20,7 +20,7 @@ class FirstPage extends StatelessWidget {
                 "ELEVATING DIGITAL EXPERIENCES",
                 style: AppWidget.SmallStyle(),
               ),
-              Spacer(), // This will push the "OUR STUDIO" text to the far right
+              Spacer(),
               Text("OUR STUDIO", style: AppWidget.SmallStyle()),
             ],
           ),
