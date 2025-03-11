@@ -55,6 +55,8 @@ class _LandingPageState extends State<LandingPage> {
                       ),
                     ],
                   ),
+                  SizedBox(height: 110),
+                  FirstPage(),
                 ],
               ),
             ),
