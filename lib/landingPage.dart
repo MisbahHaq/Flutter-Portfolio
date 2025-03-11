@@ -61,13 +61,16 @@ class _LandingPageState extends State<LandingPage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("M——H", style: AppWidget.BigStyle()),
+                              Text("M — H", style: AppWidget.BigStyle()),
                               GestureDetector(
                                 onTap: () {
                                   showModalBottomSheet(
                                     context: context,
                                     builder: (context) {
-                                      return Column();
+                                      return Column(children: [
+                                          
+                                        ],
+                                      );
                                     },
                                   );
                                 },
