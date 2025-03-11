@@ -1,29 +1,16 @@
+# portfolio
 
-#  Flutter Portfolio
+A new Flutter project.
 
-A sleek and interactive Flutter application designed to showcase your projects, skills, and professional profile. This app serves as a personal portfolio to highlight your expertise in app development and design.  
+## Getting Started
 
----
+This project is a starting point for a Flutter application.
 
-## **Features**  
+A few resources to get you started if this is your first Flutter project:
 
-- **Project Showcase**: Highlight key projects with descriptions, technologies used, and screenshots.  
-- **Skills Section**: Display your technical skills, including programming languages, frameworks, and tools.  
-- **Responsive UI**: Enjoy a modern, interactive user interface with smooth animations and transitions.  
-- **Contact Integration**: Include links to your email, LinkedIn, GitHub, and other platforms.  
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
----
-
-## **Screenshots**  
-
-
-- **Loading**
-
----
-
-## **Technologies Used**  
-
-- **Flutter**: Cross-platform framework for smooth and responsive app development.  
-- **Dart**: Core programming language for Flutter apps.  
-- **GetX**: Simplifies state management, dependency injection, and routing.  
-- **Firebase**: Used for real-time database and authentication.  
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
