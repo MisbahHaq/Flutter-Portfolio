@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppWidget {
   static TextStyle SmallStyle() {
-    return GoogleFonts.poppins(
+    return GoogleFonts.playfairDisplay(
       textStyle: TextStyle(
         color: Colors.black,
         fontSize: 19,
@@ -14,7 +14,7 @@ class AppWidget {
   }
 
   static TextStyle AlternateSmallStyle() {
-    return GoogleFonts.poppins(
+    return GoogleFonts.playfairDisplay(
       textStyle: TextStyle(
         color: Colors.white,
         fontSize: 19,
@@ -44,7 +44,7 @@ class AppWidget {
   }
 
   static TextStyle AlternateMidStyle() {
-    return GoogleFonts.poppins(
+    return GoogleFonts.playfairDisplay(
       textStyle: TextStyle(
         color: Colors.white,
         fontSize: 30,
@@ -54,7 +54,7 @@ class AppWidget {
   }
 
   static TextStyle BigStyle() {
-    return GoogleFonts.poppins(
+    return GoogleFonts.playfairDisplay(
       textStyle: TextStyle(
         color: Colors.black,
         fontSize: 30,
@@ -74,7 +74,7 @@ class AppWidget {
   }
 
   static TextStyle HeroStyle() {
-    return GoogleFonts.poppins(
+    return GoogleFonts.playfairDisplay(
       textStyle: TextStyle(
         color: Colors.black,
         fontSize: 30,
@@ -84,7 +84,7 @@ class AppWidget {
   }
 
   static TextStyle AlternateHeroStyle() {
-    return GoogleFonts.poppins(
+    return GoogleFonts.playfairDisplay(
       textStyle: TextStyle(
         color: Colors.white,
         fontSize: 40,

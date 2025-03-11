@@ -59,7 +59,7 @@ class _LandingPageState extends State<LandingPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "S — O",
+                        "M — H",
                         style: GoogleFonts.playfairDisplay(
                           fontSize: 24,
                           color: Colors.white,
