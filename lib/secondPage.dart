@@ -7,20 +7,23 @@ class SecondPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
       child: Column(
         children: [
           SizedBox(height: 90),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(width: 90),
+              SizedBox(width: screenWidth * 0.1),
               Text("02", style: AppWidget.AlternateSmallStyle()),
-              SizedBox(width: 90),
+              SizedBox(width: screenWidth * 0.1),
               Text("HIGHLIGHTS", style: AppWidget.AlternateSmallStyle()),
               Spacer(),
               Text("EXPLORE PROJECTS", style: AppWidget.AlternateSmallStyle()),
-              SizedBox(width: 90),
+              SizedBox(width: screenWidth * 0.1),
             ],
           ),
           SizedBox(height: 90),

@@ -30,7 +30,7 @@ class FirstPage extends StatelessWidget {
           ),
           SizedBox(height: screenHeight * 0.1),
           Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 "We craft elegant websites and memorable",
