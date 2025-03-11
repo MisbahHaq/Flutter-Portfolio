@@ -22,6 +22,7 @@ class FirstPage extends StatelessWidget {
               ),
               Spacer(),
               Text("OUR STUDIO", style: AppWidget.SmallStyle()),
+              SizedBox(width: 90),
             ],
           ),
           Container(
