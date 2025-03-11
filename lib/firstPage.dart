@@ -13,17 +13,15 @@ class FirstPage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(width: 90),
+              SizedBox(width: 90), // Padding for left side
               Text("01", style: AppWidget.SmallStyle()),
-              SizedBox(width: 90),
+              SizedBox(width: 90), // Space between "01" and the next text
               Text(
                 "ELEVATING DIGITAL EXPERIENCES",
                 style: AppWidget.SmallStyle(),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [Text("OUR STUDIO", style: AppWidget.SmallStyle())],
-              ),
+              Spacer(), // This will push the "OUR STUDIO" text to the far right
+              Text("OUR STUDIO", style: AppWidget.SmallStyle()),
             ],
           ),
           Container(
