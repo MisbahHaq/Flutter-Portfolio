@@ -13,7 +13,7 @@ class FirstPage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(width: 90), // Padding for left side
+              SizedBox(width: 90),
               Text("01", style: AppWidget.SmallStyle()),
               SizedBox(width: 90),
               Text(
