@@ -30,6 +30,7 @@ class FirstPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(height: 110),
                 Text(
                   "We craft elegant websites and memorable",
                   style: AppWidget.HeroStyle(),

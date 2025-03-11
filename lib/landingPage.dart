@@ -37,7 +37,7 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AnimatedContainer(
-        duration: Duration(milliseconds: 500), // Smooth transition duration
+        duration: Duration(milliseconds: 500),
         color: _scrollOffset > 1500 ? Colors.black : Colors.transparent,
         child: SingleChildScrollView(
           controller: _scrollController,
