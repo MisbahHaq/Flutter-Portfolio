@@ -224,7 +224,6 @@ class MenuItem extends StatelessWidget {
   }
 }
 
-// Horizontal Line
 class DividerLine extends StatelessWidget {
   const DividerLine({super.key});
 
