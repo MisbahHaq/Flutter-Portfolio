@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/WidgetSupport.dart';
 
 class ThirdPage extends StatelessWidget {
@@ -16,7 +17,7 @@ class ThirdPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: 150),
-            Text("M——H", style: AppWidget.AlternateHeroStyle()),
+            Text("M — H", style: AppWidget.AlternateHeroStyle()),
             SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -25,7 +26,16 @@ class ThirdPage extends StatelessWidget {
                   "TIMELESS DESIGN",
                   style: AppWidget.AlternateSmallerStyle(),
                 ),
-                Text(" and", style: AppWidget.AlternateSmallerStyle()),
+                Text(
+                  textAlign: TextAlign.center,
+                  " and",
+                  style: GoogleFonts.averageSans(
+                    fontStyle: FontStyle.italic,
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
                 Text(" MEMORABLE", style: AppWidget.AlternateSmallerStyle()),
               ],
             ),
@@ -39,14 +49,19 @@ class ThirdPage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      "AIMING rooted in",
-                      style: AppWidget.AlternateSmallerStyle(),
-                    ),
+                    Text("AIMING", style: AppWidget.AlternateSmallerStyle()),
                     Text(" for", style: AppWidget.AlternateSmallerStyle()),
                     Text(" BEAUTY,", style: AppWidget.AlternateSmallerStyle()),
                     Text(" ROOTED", style: AppWidget.AlternateSmallerStyle()),
-                    Text(" in", style: AppWidget.AlternateSmallerStyle()),
+                    Text(
+                      " in",
+                      style: GoogleFonts.averageSans(
+                        fontStyle: FontStyle.italic,
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
                   ],
                 ),
               ],
@@ -56,7 +71,15 @@ class ThirdPage extends StatelessWidget {
               children: [
                 Text("SIMPLICITY,", style: AppWidget.AlternateSmallerStyle()),
                 Text(" GUIDED", style: AppWidget.AlternateSmallerStyle()),
-                Text(" by", style: AppWidget.AlternateSmallerStyle()),
+                Text(
+                  " by",
+                  style: GoogleFonts.averageSans(
+                    fontStyle: FontStyle.italic,
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
                 Text(" KINDNESS", style: AppWidget.AlternateSmallerStyle()),
               ],
             ),

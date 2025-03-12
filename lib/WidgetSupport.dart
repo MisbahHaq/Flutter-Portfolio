@@ -63,6 +63,16 @@ class AppWidget {
     );
   }
 
+  static TextStyle NavStyle() {
+    return GoogleFonts.playfairDisplay(
+      textStyle: TextStyle(
+        color: Colors.black,
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+      ),
+    );
+  }
+
   static TextStyle HugeStyle() {
     return GoogleFonts.poppins(
       textStyle: TextStyle(

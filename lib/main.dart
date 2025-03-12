@@ -3,6 +3,7 @@ import 'package:portfolio/firstPage.dart';
 import 'package:portfolio/landingPage.dart';
 import 'package:portfolio/secondPage.dart';
 import 'package:portfolio/thirdPage.dart';
+import 'package:portfolio/works.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +14,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: LandingPage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: Works());
   }
 }

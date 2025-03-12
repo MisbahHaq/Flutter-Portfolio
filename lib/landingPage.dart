@@ -4,6 +4,7 @@ import 'package:portfolio/WidgetSupport.dart';
 import 'package:portfolio/firstPage.dart';
 import 'package:portfolio/secondPage.dart';
 import 'package:portfolio/thirdPage.dart';
+import 'package:portfolio/works.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -38,18 +39,17 @@ class _LandingPageState extends State<LandingPage> {
   void _showFullScreenModal(BuildContext context) {
     showDialog(
       context: context,
-      barrierDismissible: true, // Close when tapping outside
+      barrierDismissible: true,
       builder: (context) {
         return Dialog(
-          insetPadding: EdgeInsets.zero, // Remove default dialog padding
+          insetPadding: EdgeInsets.zero,
           backgroundColor: Colors.transparent,
           child: Container(
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height, // Full height
-            color: Colors.black, // Full background black
+            height: MediaQuery.of(context).size.height,
+            color: Colors.black,
             child: Column(
               children: [
-                // Top Navigation Bar
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 20,
@@ -81,10 +81,18 @@ class _LandingPageState extends State<LandingPage> {
 
                 const Spacer(),
 
-                // Menu Items with Lines
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    const MenuItem(title: "WORKS"),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Works()),
+                        );
+                      },
+                      child: const MenuItem(title: "WORKS"),
+                    ),
                     const DividerLine(),
                     const MenuItem(title: "ABOUT"),
                     const DividerLine(),
@@ -94,7 +102,6 @@ class _LandingPageState extends State<LandingPage> {
 
                 const Spacer(),
 
-                // Footer
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 20,
@@ -104,7 +111,7 @@ class _LandingPageState extends State<LandingPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "© 2025 STUDIO OLIMPO",
+                        "MADE WITH FLUTTER",
                         style: GoogleFonts.playfairDisplay(
                           fontSize: 12,
                           color: Colors.white,
@@ -217,7 +224,7 @@ class MenuItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 16.0),
       child: Text(
         title,
-        style: GoogleFonts.playfairDisplay(fontSize: 48, color: Colors.white),
+        style: GoogleFonts.playfairDisplay(fontSize: 75, color: Colors.white),
       ),
     );
   }
@@ -229,7 +236,7 @@ class DividerLine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
+      width: 900,
       height: 1,
       color: Colors.white.withOpacity(0.5),
       margin: const EdgeInsets.symmetric(vertical: 8),
