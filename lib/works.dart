@@ -133,12 +133,11 @@ class _WorksState extends State<Works> {
           Container(
             padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
             child: Padding(
-              padding: const EdgeInsets.only(top: 150, left: 200),
+              padding: const EdgeInsets.only(top: 150),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text("01", style: AppWidget.SmallStyle()),
                       SizedBox(
@@ -147,9 +146,7 @@ class _WorksState extends State<Works> {
                       Text("CYBERFICTION", style: AppWidget.SmallStyle()),
                     ],
                   ),
-                  SizedBox(
-                    height: 20,
-                  ), // Adds space between the text and the container
+                  SizedBox(height: 20),
                   Container(
                     height: 200,
                     width: 500,
