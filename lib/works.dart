@@ -140,9 +140,7 @@ class _WorksState extends State<Works> {
                   Row(
                     children: [
                       Text("01", style: AppWidget.SmallStyle()),
-                      SizedBox(
-                        width: screenWidth * 0.1,
-                      ), // Adds space between "01" and "CYBERFICTION"
+                      SizedBox(width: screenWidth * 0.1),
                       Text("CYBERFICTION", style: AppWidget.SmallStyle()),
                     ],
                   ),
