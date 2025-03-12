@@ -207,7 +207,6 @@ class _LandingPageState extends State<LandingPage> {
   }
 }
 
-// Menu Item
 class MenuItem extends StatelessWidget {
   final String title;
   const MenuItem({super.key, required this.title});
