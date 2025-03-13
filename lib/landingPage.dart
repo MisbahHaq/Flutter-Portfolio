@@ -58,20 +58,33 @@ class _LandingPageState extends State<LandingPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        "M — H",
-                        style: GoogleFonts.playfairDisplay(
-                          fontSize: 24,
-                          color: Colors.white,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LandingPage(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          "M — H",
+                          style: GoogleFonts.playfairDisplay(
+                            fontSize: 24,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       GestureDetector(
                         onTap: () => Navigator.pop(context),
-                        child: Text(
-                          "CLOSE",
-                          style: GoogleFonts.playfairDisplay(
-                            fontSize: 14,
-                            color: Colors.white,
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 50, top: 25),
+                          child: Text(
+                            "CLOSE",
+                            style: GoogleFonts.playfairDisplay(
+                              fontSize: 14,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),

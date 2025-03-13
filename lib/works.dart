@@ -120,7 +120,17 @@ class _WorksState extends State<Works> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("M — H", style: AppWidget.BigStyle()),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LandingPage(),
+                          ),
+                        );
+                      },
+                      child: Text("M — H", style: AppWidget.BigStyle()),
+                    ),
                     GestureDetector(
                       onTap: () => _showFullScreenModal(context),
                       child: Text("MENU", style: AppWidget.BigStyle()),
