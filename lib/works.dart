@@ -156,10 +156,7 @@ class _WorksState extends State<Works> {
                   ),
                 ],
               ),
-
               const SizedBox(height: 20),
-
-              // Project Images Section
               Center(
                 child: Container(
                   width: screenWidth * 0.8,
