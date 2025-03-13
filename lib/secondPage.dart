@@ -28,7 +28,7 @@ class SecondPage extends StatelessWidget {
           ),
           SizedBox(height: 90),
           Container(
-            width: 550,
+            width: 700,
             height: 500,
             decoration: BoxDecoration(color: Colors.grey),
             child: Column(children: [SizedBox(height: 100), CaraouselFirst()]),

@@ -151,10 +151,12 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(248, 246, 241, 1),
       body: AnimatedContainer(
         duration: const Duration(milliseconds: 500),
         color: _scrollOffset > 1500 ? Colors.black : Colors.transparent,
         child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           controller: _scrollController,
           scrollDirection: Axis.vertical,
           child: LayoutBuilder(
