@@ -19,7 +19,7 @@ class _WorksState extends State<Works> {
     super.initState();
     _videoController = VideoPlayerController.asset("assets/videos/0303.mp4")
       ..initialize().then((_) {
-        _videoController.setLooping(true); // Loop video
+        _videoController.setLooping(true);
         _videoController.play(); // Auto-play
         setState(() {});
       });
