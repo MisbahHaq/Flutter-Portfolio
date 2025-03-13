@@ -133,10 +133,7 @@ class _WorksState extends State<Works> {
                   ],
                 ),
               ),
-
               const SizedBox(height: 40),
-
-              // Project Details & Grid
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
