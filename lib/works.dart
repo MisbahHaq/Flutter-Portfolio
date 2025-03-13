@@ -116,48 +116,81 @@ class _WorksState extends State<Works> {
     return Scaffold(
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 30, top: 30, right: 70),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("M — H", style: AppWidget.BigStyle()),
-                GestureDetector(
-                  onTap: () => _showFullScreenModal(context),
-                  child: Text("MENU", style: AppWidget.NavStyle()),
-                ),
-              ],
-            ),
-          ),
-
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
-            child: Padding(
-              padding: const EdgeInsets.only(top: 150),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Text("01", style: AppWidget.SmallStyle()),
-                      SizedBox(width: screenWidth * 0.1),
-                      Text("CYBERFICTION", style: AppWidget.SmallStyle()),
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  Container(
-                    height: 200,
-                    width: 500,
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(20),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Top Navigation Bar
+              Padding(
+                padding: const EdgeInsets.only(left: 30, top: 30, right: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("M — H", style: AppWidget.BigStyle()),
+                    GestureDetector(
+                      onTap: () => _showFullScreenModal(context),
+                      child: Text("MENU", style: AppWidget.BigStyle()),
                     ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(height: 40),
+
+              // Project Details & Grid
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 100),
+                    child: Row(
+                      children: [
+                        Text("01", style: AppWidget.NavStyle()),
+                        const SizedBox(width: 80),
+                        Text("RETROSCENA", style: AppWidget.NavStyle()),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 150),
+                    child: Text("SEE PROJECT", style: AppWidget.NavStyle()),
                   ),
                 ],
               ),
-            ),
+
+              const SizedBox(height: 20),
+
+              // Project Images Section
+              Center(
+                child: Container(
+                  width: screenWidth * 0.8,
+                  height: 300,
+                  color: Colors.black, // Dark Background for Images
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [],
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
+      ),
+    );
+  }
+}
+
+class ProjectImage extends StatelessWidget {
+  final String imagePath;
+  const ProjectImage({super.key, required this.imagePath});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 150,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(8),
+        image: DecorationImage(image: AssetImage(imagePath), fit: BoxFit.cover),
       ),
     );
   }
