@@ -52,9 +52,7 @@ class _WorksState extends State<Works> {
                     ),
                   ),
                 ),
-
                 const Spacer(),
-
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -73,9 +71,7 @@ class _WorksState extends State<Works> {
                     const MenuItem(title: "CONTACT"),
                   ],
                 ),
-
                 const Spacer(),
-
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 20,
