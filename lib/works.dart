@@ -164,7 +164,7 @@ class _WorksState extends State<Works> {
                 child: Container(
                   width: screenWidth * 0.8,
                   height: 300,
-                  color: Colors.black, // Dark Background for Images
+                  color: Colors.black,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [],
