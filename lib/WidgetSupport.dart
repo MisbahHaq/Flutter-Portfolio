@@ -33,6 +33,16 @@ class AppWidget {
     );
   }
 
+  static TextStyle SmallerStyle() {
+    return GoogleFonts.montserrat(
+      textStyle: TextStyle(
+        color: Colors.black,
+        fontSize: 15,
+        fontWeight: FontWeight.normal,
+      ),
+    );
+  }
+
   static TextStyle MidStyle() {
     return GoogleFonts.poppins(
       textStyle: TextStyle(

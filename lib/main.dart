@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/contactPage.dart';
 import 'package:portfolio/firstPage.dart';
 import 'package:portfolio/landingPage.dart';
 import 'package:portfolio/secondPage.dart';
@@ -14,6 +15,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: LandingPage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: ContactPage());
   }
 }
