@@ -119,7 +119,6 @@ class _WorksState extends State<Works> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Top Navigation Bar
               Padding(
                 padding: const EdgeInsets.only(left: 30, top: 30, right: 30),
                 child: Row(
