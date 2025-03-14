@@ -81,7 +81,15 @@ class _AboutPageState extends State<AboutPage> {
                       child: const MenuItem(title: "WORKS"),
                     ),
                     const DividerLine(),
-                    const MenuItem(title: "ABOUT"),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => AboutPage()),
+                        );
+                      },
+                      child: const MenuItem(title: "ABOUT"),
+                    ),
                     const DividerLine(),
                     const MenuItem(title: "CONTACT"),
                   ],

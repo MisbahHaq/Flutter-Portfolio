@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/WidgetSupport.dart';
+import 'package:portfolio/aboutPage.dart';
 import 'package:portfolio/landingPage.dart';
 import 'package:portfolio/thirdPage.dart';
 import 'package:portfolio/works.dart';
@@ -84,9 +85,27 @@ class _ContactPageState extends State<ContactPage> {
                       child: const MenuItem(title: "WORKS"),
                     ),
                     const DividerLine(),
-                    const MenuItem(title: "ABOUT"),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => AboutPage()),
+                        );
+                      },
+                      child: const MenuItem(title: "ABOUT"),
+                    ),
                     const DividerLine(),
-                    const MenuItem(title: "CONTACT"),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ContactPage(),
+                          ),
+                        );
+                      },
+                      child: const MenuItem(title: "CONTACT"),
+                    ),
                   ],
                 ),
 

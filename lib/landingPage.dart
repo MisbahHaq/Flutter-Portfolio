@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/WidgetSupport.dart';
+import 'package:portfolio/aboutPage.dart';
 import 'package:portfolio/contactPage.dart';
 import 'package:portfolio/firstPage.dart';
 import 'package:portfolio/secondPage.dart';
@@ -108,7 +109,15 @@ class _LandingPageState extends State<LandingPage> {
                       child: const MenuItem(title: "WORKS"),
                     ),
                     const DividerLine(),
-                    const MenuItem(title: "ABOUT"),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => AboutPage()),
+                        );
+                      },
+                      child: const MenuItem(title: "ABOUT"),
+                    ),
                     const DividerLine(),
                     GestureDetector(
                       onTap: () {
