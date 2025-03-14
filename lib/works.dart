@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/contactPage.dart';
 import 'package:video_player/video_player.dart';
 import 'package:portfolio/WidgetSupport.dart';
 import 'package:portfolio/landingPage.dart';
@@ -85,7 +87,17 @@ class _WorksState extends State<Works> {
                     const DividerLine(),
                     const MenuItem(title: "ABOUT"),
                     const DividerLine(),
-                    const MenuItem(title: "CONTACT"),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ContactPage(),
+                          ),
+                        );
+                      },
+                      child: const MenuItem(title: "CONTACT"),
+                    ),
                   ],
                 ),
 
