@@ -38,7 +38,7 @@ class AppWidget {
       textStyle: TextStyle(
         color: Colors.black,
         fontSize: 15,
-        fontWeight: FontWeight.normal,
+        fontWeight: FontWeight.w500,
       ),
     );
   }

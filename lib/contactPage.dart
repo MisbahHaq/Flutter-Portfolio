@@ -155,26 +155,36 @@ class _ContactPageState extends State<ContactPage> {
                 ],
               ),
             ),
-            SizedBox(height: 200),
+            SizedBox(height: 300),
             Column(
-              crossAxisAlignment:
-                  CrossAxisAlignment.center, // Centers the Column's children
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Row(
-                  mainAxisAlignment:
-                      MainAxisAlignment.center, // Centers the Text in the Row
-                  children: [Text("LET'S HAVE A CHAT")],
-                ),
+                // Heading Text
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Text("misbahhaque@yahoo.com")],
+                  children: [
+                    Text("LET'S HAVE A CHAT", style: AppWidget.SmallerStyle()),
+                  ],
                 ),
+                SizedBox(height: 35),
+
+                // Email Text
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("misbahhaque@yahoo.com", style: AppWidget.BigStyle()),
+                  ],
+                ),
+                SizedBox(height: 30),
+
+                // Description Texts
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Reach out with your name and your company details–any  ",
-                      textAlign: TextAlign.center, // Centers the text
+                      "Reach out with your name and your company details–any",
+                      textAlign: TextAlign.center,
+                      style: AppWidget.SmallerStyle(),
                     ),
                   ],
                 ),
@@ -183,7 +193,8 @@ class _ContactPageState extends State<ContactPage> {
                   children: [
                     Text(
                       "helpful insights about your project and vision are appreciated.",
-                      textAlign: TextAlign.center, // Centers the text
+                      textAlign: TextAlign.center,
+                      style: AppWidget.SmallerStyle(),
                     ),
                   ],
                 ),
@@ -192,12 +203,39 @@ class _ContactPageState extends State<ContactPage> {
                   children: [
                     Text(
                       "We’d love to connect and help elevate your brand.",
-                      textAlign: TextAlign.center, // Centers the text
+                      textAlign: TextAlign.center,
+                      style: AppWidget.SmallerStyle(),
                     ),
                   ],
                 ),
+                SizedBox(height: 90),
+
+                // Contact Information with Correct Alignment
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                  ), // Reduced the large padding
+                  child: Row(
+                    mainAxisAlignment:
+                        MainAxisAlignment.center, // Ensure it is centered
+                    children: [
+                      Text(
+                        "PHONE +92 331 3506 665",
+                        textAlign: TextAlign.center,
+                        style: AppWidget.SmallerStyle(),
+                      ),
+                      SizedBox(width: 20),
+                      Text(
+                        "linkedin.com/in/misbah-haq",
+                        textAlign: TextAlign.center,
+                        style: AppWidget.SmallerStyle(),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
+            SizedBox(height: 500),
 
             Container(
               height: 600,
