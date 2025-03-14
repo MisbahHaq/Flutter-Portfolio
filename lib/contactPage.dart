@@ -216,8 +216,7 @@ class _ContactPageState extends State<ContactPage> {
                     horizontal: 20,
                   ), // Reduced the large padding
                   child: Row(
-                    mainAxisAlignment:
-                        MainAxisAlignment.center, // Ensure it is centered
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         "PHONE +92 331 3506 665",
