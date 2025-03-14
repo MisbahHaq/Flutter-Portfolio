@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/WidgetSupport.dart';
-import 'package:portfolio/aboutPage.dart';
-import 'package:portfolio/contactPage.dart';
-import 'package:portfolio/firstPage.dart';
-import 'package:portfolio/secondPage.dart';
-import 'package:portfolio/thirdPage.dart';
-import 'package:portfolio/works.dart';
+import 'package:portfolio/Constants/WidgetSupport.dart';
+import 'package:portfolio/Pages/aboutPage.dart';
+import 'package:portfolio/Pages/contactPage.dart';
+import 'package:portfolio/Sections/firstSection.dart';
+import 'package:portfolio/Sections/secondSection.dart';
+import 'package:portfolio/Sections/thirdSection.dart';
+import 'package:portfolio/Pages/worksPage.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});

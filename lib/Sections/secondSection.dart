@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/WidgetSupport.dart';
-import 'package:portfolio/caraousel.dart';
+import 'package:portfolio/Constants/WidgetSupport.dart';
+import 'package:portfolio/Constants/caraousel.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({super.key});

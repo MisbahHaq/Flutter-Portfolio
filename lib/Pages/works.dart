@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/aboutPage.dart';
-import 'package:portfolio/contactPage.dart';
+import 'package:portfolio/Pages/aboutPage.dart';
+import 'package:portfolio/Pages/contactPage.dart';
 import 'package:video_player/video_player.dart';
-import 'package:portfolio/WidgetSupport.dart';
-import 'package:portfolio/landingPage.dart';
+import 'package:portfolio/Constants/WidgetSupport.dart';
+import 'package:portfolio/Pages/landingPage.dart';
 
 class Works extends StatefulWidget {
   const Works({super.key});
