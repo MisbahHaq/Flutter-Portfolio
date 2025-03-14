@@ -209,8 +209,6 @@ class _ContactPageState extends State<ContactPage> {
                   ],
                 ),
                 SizedBox(height: 90),
-
-                // Contact Information with Correct Alignment
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
