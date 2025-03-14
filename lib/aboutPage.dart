@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/WidgetSupport.dart';
 import 'package:portfolio/landingPage.dart';
-import 'package:portfolio/thirdPage.dart';
 import 'package:portfolio/works.dart';
 
 class AboutPage extends StatefulWidget {
@@ -68,9 +67,7 @@ class _AboutPageState extends State<AboutPage> {
                     ],
                   ),
                 ),
-
                 const Spacer(),
-
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -89,9 +86,7 @@ class _AboutPageState extends State<AboutPage> {
                     const MenuItem(title: "CONTACT"),
                   ],
                 ),
-
                 const Spacer(),
-
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 20,
@@ -228,7 +223,78 @@ class _AboutPageState extends State<AboutPage> {
                 );
               },
             ),
-            SizedBox(height: 500),
+            SizedBox(height: 50),
+
+            // SERVICES Section
+            Container(
+              height: 600,
+              decoration: BoxDecoration(
+                border: Border(top: BorderSide(color: Colors.black)),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(height: 200),
+                    // Second Row with long text and additional text column
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        return Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              flex: 2,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "SERVICES",
+                                      style: AppWidget.SmallerStyle(),
+                                    ),
+                                    SizedBox(height: 20),
+                                    Text(
+                                      "Freelancing isn’t just a job; it’s our craft. We thrive on collaborating with clients to understand their needs, bringing their ideas to life with precision and creativity. Whether it’s a sleek portfolio, a dynamic e-commerce site, or a complex web application, we’re here to make it happen.",
+                                      style: AppWidget.SmallerStyle(),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(height: 8),
+                                    Text(
+                                      "Web Development",
+                                      style: AppWidget.SmallerStyle(),
+                                    ),
+                                    Text(
+                                      "App Development",
+                                      style: AppWidget.SmallerStyle(),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ),
             Container(
               height: 600,
               decoration: BoxDecoration(
