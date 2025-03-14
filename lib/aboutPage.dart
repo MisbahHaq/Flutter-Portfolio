@@ -237,7 +237,6 @@ class _AboutPageState extends State<AboutPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(height: 200),
-                    // Second Row with long text and additional text column
                     LayoutBuilder(
                       builder: (context, constraints) {
                         return Row(
