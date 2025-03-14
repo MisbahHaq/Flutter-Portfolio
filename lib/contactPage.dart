@@ -212,9 +212,7 @@ class _ContactPageState extends State<ContactPage> {
 
                 // Contact Information with Correct Alignment
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                  ), // Reduced the large padding
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
