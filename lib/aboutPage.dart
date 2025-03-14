@@ -154,7 +154,80 @@ class _AboutPageState extends State<AboutPage> {
                 ],
               ),
             ),
-            Row(children: [Image.asset("assets/images/dev.jpg")]),
+            SizedBox(height: 250),
+            LayoutBuilder(
+              builder: (context, constraints) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Flexible(
+                      flex: 1,
+                      child: Image.asset(
+                        "assets/images/dev.jpg",
+                        width:
+                            constraints.maxWidth > 800
+                                ? 500
+                                : constraints.maxWidth * 0.6,
+                        height: 300,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    Flexible(
+                      flex: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "ABOUT",
+                              style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Container(
+                              width: 550,
+                              child: Text(
+                                "Founded by two friends with a shared vision, We began as an idea to harness our potential and showcase what we could achieve together.",
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Container(
+                              width: 550,
+                              child: Text(
+                                "Today, it’s a growing agency that brings bold concepts to life through cutting-edge web design and development.",
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Container(
+                              width: 550,
+                              child: Text(
+                                "Our story started with a simple goal: to create websites that don’t just look great but also deliver outstanding functionality and user experiences.",
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Container(
+                              width: 550,
+                              child: Text(
+                                "Every website we build reflects our commitment to quality, attention to detail, and the belief that every client’s story deserves to be told uniquely.",
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                );
+              },
+            ),
           ],
         ),
       ),
