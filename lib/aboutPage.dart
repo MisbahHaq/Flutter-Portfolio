@@ -249,7 +249,6 @@ class _AboutPageState extends State<AboutPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            // Left Column: Text and Description
                             Container(
                               padding: EdgeInsets.symmetric(horizontal: 20),
                               width:
