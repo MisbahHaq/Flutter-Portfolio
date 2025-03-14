@@ -224,8 +224,6 @@ class _AboutPageState extends State<AboutPage> {
               },
             ),
             SizedBox(height: 50),
-
-            // SERVICES Section
             Container(
               height: 600,
               decoration: BoxDecoration(
