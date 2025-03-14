@@ -277,8 +277,7 @@ class _AboutPageState extends State<AboutPage> {
                               width:
                                   constraints.maxWidth > 800
                                       ? 300
-                                      : constraints.maxWidth *
-                                          0.4, // Adjust width dynamically
+                                      : constraints.maxWidth * 0.4,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
