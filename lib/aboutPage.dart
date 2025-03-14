@@ -254,8 +254,7 @@ class _AboutPageState extends State<AboutPage> {
                               width:
                                   constraints.maxWidth > 800
                                       ? 600
-                                      : constraints.maxWidth *
-                                          0.8, // Adjust width dynamically
+                                      : constraints.maxWidth * 0.8,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -273,7 +272,6 @@ class _AboutPageState extends State<AboutPage> {
                               ),
                             ),
                             SizedBox(width: 20),
-                            // Right Column: List of services
                             Container(
                               padding: EdgeInsets.symmetric(horizontal: 30),
                               width:
