@@ -176,8 +176,6 @@ class _ContactPageState extends State<ContactPage> {
                   ],
                 ),
                 SizedBox(height: 30),
-
-                // Description Texts
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
