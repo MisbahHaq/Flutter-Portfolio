@@ -233,7 +233,7 @@ class _AboutPageState extends State<AboutPage> {
             ),
             SizedBox(height: 50),
             Container(
-              height: 600,
+              height: 500,
               decoration: BoxDecoration(
                 border: Border(top: BorderSide(color: Colors.black)),
               ),
@@ -242,54 +242,60 @@ class _AboutPageState extends State<AboutPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: 200),
+                    SizedBox(height: 150),
                     LayoutBuilder(
                       builder: (context, constraints) {
                         return Row(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Expanded(
-                              flex: 2,
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 20,
-                                ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "SERVICES",
-                                      style: AppWidget.SmallerStyle(),
-                                    ),
-                                    SizedBox(height: 20),
-                                    Text(
-                                      "Freelancing isn’t just a job; it’s our craft. We thrive on collaborating with clients to understand their needs, bringing their ideas to life with precision and creativity. Whether it’s a sleek portfolio, a dynamic e-commerce site, or a complex web application, we’re here to make it happen.",
-                                      style: AppWidget.SmallerStyle(),
-                                    ),
-                                  ],
-                                ),
+                            // Left Column: Text and Description
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: 20),
+                              width:
+                                  constraints.maxWidth > 800
+                                      ? 600
+                                      : constraints.maxWidth *
+                                          0.8, // Adjust width dynamically
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "SERVICES",
+                                    style: AppWidget.SmallerStyle(),
+                                  ),
+                                  SizedBox(height: 20),
+                                  Text(
+                                    "Freelancing isn’t just a job; it’s our craft. We thrive on collaborating with clients to understand their needs, bringing their ideas to life with precision and creativity. Whether it’s a sleek portfolio, a dynamic e-commerce site, or a complex web application, we’re here to make it happen.",
+                                    style: AppWidget.SmallerStyle(),
+                                    softWrap: true,
+                                  ),
+                                ],
                               ),
                             ),
-                            Expanded(
-                              flex: 1,
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 20,
-                                ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    SizedBox(height: 8),
-                                    Text(
-                                      "Web Development",
-                                      style: AppWidget.SmallerStyle(),
-                                    ),
-                                    Text(
-                                      "App Development",
-                                      style: AppWidget.SmallerStyle(),
-                                    ),
-                                  ],
-                                ),
+                            SizedBox(width: 20),
+                            // Right Column: List of services
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: 30),
+                              width:
+                                  constraints.maxWidth > 800
+                                      ? 300
+                                      : constraints.maxWidth *
+                                          0.4, // Adjust width dynamically
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(height: 8),
+                                  Text(
+                                    "Web Development",
+                                    style: AppWidget.SmallerStyle(),
+                                  ),
+                                  SizedBox(height: 8),
+                                  Text(
+                                    "App Development",
+                                    style: AppWidget.SmallerStyle(),
+                                  ),
+                                ],
                               ),
                             ),
                           ],
@@ -300,6 +306,7 @@ class _AboutPageState extends State<AboutPage> {
                 ),
               ),
             ),
+
             Container(
               height: 600,
               decoration: BoxDecoration(
