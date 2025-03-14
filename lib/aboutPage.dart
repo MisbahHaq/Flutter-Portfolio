@@ -281,14 +281,19 @@ class _AboutPageState extends State<AboutPage> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SizedBox(height: 8),
+                                  SizedBox(height: 50),
                                   Text(
-                                    "Web Development",
+                                    "WEB & APP DESIGN",
                                     style: AppWidget.SmallerStyle(),
                                   ),
                                   SizedBox(height: 8),
                                   Text(
-                                    "App Development",
+                                    "DEVELOPMENT",
+                                    style: AppWidget.SmallerStyle(),
+                                  ),
+                                  SizedBox(height: 8),
+                                  Text(
+                                    "MARKETTING & SALES",
                                     style: AppWidget.SmallerStyle(),
                                   ),
                                 ],
