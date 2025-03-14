@@ -159,7 +159,6 @@ class _ContactPageState extends State<ContactPage> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Heading Text
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
