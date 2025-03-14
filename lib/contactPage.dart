@@ -167,8 +167,6 @@ class _ContactPageState extends State<ContactPage> {
                   ],
                 ),
                 SizedBox(height: 35),
-
-                // Email Text
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
