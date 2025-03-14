@@ -155,11 +155,50 @@ class _ContactPageState extends State<ContactPage> {
                 ],
               ),
             ),
+            SizedBox(height: 200),
             Column(
+              crossAxisAlignment:
+                  CrossAxisAlignment.center, // Centers the Column's children
               children: [
-                Row(children: [Text("LET'S HAVE A CHAT")]),
+                Row(
+                  mainAxisAlignment:
+                      MainAxisAlignment.center, // Centers the Text in the Row
+                  children: [Text("LET'S HAVE A CHAT")],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [Text("misbahhaque@yahoo.com")],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Reach out with your name and your company details–any  ",
+                      textAlign: TextAlign.center, // Centers the text
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "helpful insights about your project and vision are appreciated.",
+                      textAlign: TextAlign.center, // Centers the text
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "We’d love to connect and help elevate your brand.",
+                      textAlign: TextAlign.center, // Centers the text
+                    ),
+                  ],
+                ),
               ],
             ),
+
             Container(
               height: 600,
               decoration: BoxDecoration(
