@@ -193,7 +193,7 @@ class _AboutPageState extends State<AboutPage> {
                               width: 550,
                               child: Text(
                                 "Founded by two friends with a shared vision, We began as an idea to harness our potential and showcase what we could achieve together.",
-                                style: TextStyle(fontSize: 16),
+                                style: AppWidget.SmallerStyle(),
                               ),
                             ),
                             SizedBox(height: 8),
@@ -201,7 +201,7 @@ class _AboutPageState extends State<AboutPage> {
                               width: 550,
                               child: Text(
                                 "Today, it’s a growing agency that brings bold concepts to life through cutting-edge web design and development.",
-                                style: TextStyle(fontSize: 16),
+                                style: AppWidget.SmallerStyle(),
                               ),
                             ),
                             SizedBox(height: 8),
@@ -209,7 +209,7 @@ class _AboutPageState extends State<AboutPage> {
                               width: 550,
                               child: Text(
                                 "Our story started with a simple goal: to create websites that don’t just look great but also deliver outstanding functionality and user experiences.",
-                                style: TextStyle(fontSize: 16),
+                                style: AppWidget.SmallerStyle(),
                               ),
                             ),
                             SizedBox(height: 8),
@@ -217,7 +217,7 @@ class _AboutPageState extends State<AboutPage> {
                               width: 550,
                               child: Text(
                                 "Every website we build reflects our commitment to quality, attention to detail, and the belief that every client’s story deserves to be told uniquely.",
-                                style: TextStyle(fontSize: 16),
+                                style: AppWidget.SmallerStyle(),
                               ),
                             ),
                           ],
@@ -227,6 +227,87 @@ class _AboutPageState extends State<AboutPage> {
                   ],
                 );
               },
+            ),
+            SizedBox(height: 500),
+            Container(
+              height: 600,
+              decoration: BoxDecoration(
+                border: Border(top: BorderSide(color: Colors.black)),
+              ),
+              child: Center(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(height: 150),
+                    Text("M — H", style: AppWidget.HeroStyle()),
+                    SizedBox(height: 30),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "TIMELESS DESIGN",
+                          style: AppWidget.SmallerStyle(),
+                        ),
+                        Text(
+                          textAlign: TextAlign.center,
+                          " and",
+                          style: GoogleFonts.averageSans(
+                            fontStyle: FontStyle.italic,
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                        Text(" MEMORABLE", style: AppWidget.SmallerStyle()),
+                      ],
+                    ),
+                    Text(
+                      "DIGITAL EXPERIENCES.",
+                      style: AppWidget.SmallerStyle(),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("AIMING", style: AppWidget.SmallerStyle()),
+                            Text(" for", style: AppWidget.SmallerStyle()),
+                            Text(" BEAUTY,", style: AppWidget.SmallerStyle()),
+                            Text(" ROOTED", style: AppWidget.SmallerStyle()),
+                            Text(
+                              " in",
+                              style: GoogleFonts.averageSans(
+                                fontStyle: FontStyle.italic,
+                                color: Colors.black,
+                                fontSize: 18,
+                                fontWeight: FontWeight.normal,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("SIMPLICITY,", style: AppWidget.SmallerStyle()),
+                        Text(" GUIDED", style: AppWidget.SmallerStyle()),
+                        Text(
+                          " by",
+                          style: GoogleFonts.averageSans(
+                            fontStyle: FontStyle.italic,
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                        Text(" KINDNESS", style: AppWidget.SmallerStyle()),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
