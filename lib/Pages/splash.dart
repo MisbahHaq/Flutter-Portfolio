@@ -20,9 +20,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     Timer(const Duration(seconds: 5), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(
-          builder: (context) => const LandingPage(),
-        ), // Adjust to your landing page
+        MaterialPageRoute(builder: (context) => const LandingPage()),
       );
     });
   }
@@ -30,12 +28,11 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black, // Splash screen background color
+      backgroundColor: Colors.black,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Here you can put your logo or any widget you want to display on the splash screen
             Icon(Icons.flutter_dash, color: Colors.white, size: 100),
             const SizedBox(height: 20),
             Text(
