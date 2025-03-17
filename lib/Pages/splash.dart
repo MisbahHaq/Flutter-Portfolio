@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'dart:async'; // To use Timer
-import 'package:portfolio/Pages/landingPage.dart'; // Import your main landing page here
+import 'dart:async';
+import 'package:portfolio/Pages/landingPage.dart';
 
-// Splash Screen Page
 class SplashScreenPage extends StatefulWidget {
   const SplashScreenPage({super.key});
 
