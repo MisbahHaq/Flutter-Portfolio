@@ -30,29 +30,28 @@ class _LandingPageState extends State<LandingPage>
     super.initState();
     _scrollController.addListener(_scrollListener);
 
-    // Animation setup
     _animationController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 1),
     );
 
     _misbahAnimation = Tween<Offset>(
-      begin: Offset(0, 1), // Start from bottom
-      end: Offset(0, 0), // End at original position
+      begin: Offset(0, 1),
+      end: Offset(0, 0),
     ).animate(
       CurvedAnimation(parent: _animationController, curve: Curves.easeOut),
     );
 
     _haqueAnimation = Tween<Offset>(
-      begin: Offset(0, 1), // Start from bottom
-      end: Offset(0, 0), // End at original position
+      begin: Offset(0, 1),
+      end: Offset(0, 0),
     ).animate(
       CurvedAnimation(parent: _animationController, curve: Curves.easeOut),
     );
 
     _webDevAnimation = Tween<Offset>(
-      begin: Offset(0, 1), // Start from bottom
-      end: Offset(0, 0), // End at original position
+      begin: Offset(0, 1),
+      end: Offset(0, 0),
     ).animate(
       CurvedAnimation(parent: _animationController, curve: Curves.easeOut),
     );
@@ -238,8 +237,6 @@ class _LandingPageState extends State<LandingPage>
                       ],
                     ),
                   ),
-
-                  // Animated Row for Misbah
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -270,8 +267,6 @@ class _LandingPageState extends State<LandingPage>
                   ),
 
                   const SizedBox(height: 2),
-
-                  // Animated Row for Haque
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
@@ -328,10 +323,7 @@ class _MenuItemState extends State<MenuItem> {
           widget.title,
           style: GoogleFonts.playfairDisplay(
             fontSize: 75,
-            color:
-                _isHovered
-                    ? Colors.white
-                    : Colors.white, // Change color on hover
+            color: _isHovered ? Colors.white : Colors.white,
             shadows:
                 _isHovered
                     ? [
