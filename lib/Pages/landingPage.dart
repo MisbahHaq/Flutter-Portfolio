@@ -298,17 +298,52 @@ class _LandingPageState extends State<LandingPage>
   }
 }
 
-class MenuItem extends StatelessWidget {
+class MenuItem extends StatefulWidget {
   final String title;
   const MenuItem({super.key, required this.title});
+
+  @override
+  _MenuItemState createState() => _MenuItemState();
+}
+
+class _MenuItemState extends State<MenuItem> {
+  bool _isHovered = false;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16.0),
-      child: Text(
-        title,
-        style: GoogleFonts.playfairDisplay(fontSize: 75, color: Colors.white),
+      child: MouseRegion(
+        onEnter: (_) {
+          setState(() {
+            _isHovered = true;
+          });
+        },
+        onExit: (_) {
+          setState(() {
+            _isHovered = false;
+          });
+        },
+        child: Text(
+          widget.title,
+          style: GoogleFonts.playfairDisplay(
+            fontSize: 75,
+            color:
+                _isHovered
+                    ? Colors.white
+                    : Colors.white, // Change color on hover
+            shadows:
+                _isHovered
+                    ? [
+                      Shadow(
+                        blurRadius: 5.0,
+                        color: Colors.white.withOpacity(0.8),
+                        offset: Offset(0, 0),
+                      ),
+                    ]
+                    : [],
+          ),
+        ),
       ),
     );
   }
