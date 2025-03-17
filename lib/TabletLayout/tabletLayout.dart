@@ -1,21 +1,71 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/Constants/WidgetSupport.dart';
-import 'package:portfolio/Pages/aboutPage.dart';
-import 'package:portfolio/Pages/contactPage.dart';
-import 'package:portfolio/Sections/firstSection.dart';
-import 'package:portfolio/Sections/secondSection.dart';
-import 'package:portfolio/Sections/thirdSection.dart';
-import 'package:portfolio/Pages/worksPage.dart';
+import 'package:portfolio/DesktopLayout/Constants/WidgetSupport.dart';
+import 'package:portfolio/DesktopLayout/Pages/aboutPage.dart';
+import 'package:portfolio/DesktopLayout/Pages/contactPage.dart';
+import 'package:portfolio/DesktopLayout/Pages/works.dart';
+import 'package:portfolio/DesktopLayout/Sections/firstSection.dart';
+import 'package:portfolio/DesktopLayout/Sections/secondSection.dart';
+import 'package:portfolio/DesktopLayout/Sections/thirdSection.dart';
 
-class LandingPage extends StatefulWidget {
-  const LandingPage({super.key});
+class SplashScreenPage extends StatefulWidget {
+  const SplashScreenPage({super.key});
 
   @override
-  State<LandingPage> createState() => _LandingPageState();
+  _SplashScreenPageState createState() => _SplashScreenPageState();
 }
 
-class _LandingPageState extends State<LandingPage>
+class _SplashScreenPageState extends State<SplashScreenPage> {
+  @override
+  void initState() {
+    super.initState();
+    _navigateToLandingPage();
+  }
+
+  void _navigateToLandingPage() {
+    Timer(const Duration(seconds: 5), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const TabletPage()),
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.flutter_dash, color: Colors.white, size: 100),
+            const SizedBox(height: 20),
+            Text(
+              'Welcome to My Portfolio',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class TabletPage extends StatefulWidget {
+  const TabletPage({super.key});
+
+  @override
+  State<TabletPage> createState() => _TabletPageState();
+}
+
+class _TabletPageState extends State<TabletPage>
     with SingleTickerProviderStateMixin {
   final ScrollController _scrollController = ScrollController();
   double _scrollOffset = 0;
@@ -100,7 +150,7 @@ class _LandingPageState extends State<LandingPage>
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => LandingPage(),
+                              builder: (context) => TabletPage(),
                             ),
                           );
                         },
@@ -243,7 +293,7 @@ class _LandingPageState extends State<LandingPage>
                       Center(
                         child: SlideTransition(
                           position: _misbahAnimation,
-                          child: Text("Misbah", style: AppWidget.HugeStyle()),
+                          child: Text("Misbah", style: AppWidget.BigStyle()),
                         ),
                       ),
                       Flexible(
@@ -272,7 +322,7 @@ class _LandingPageState extends State<LandingPage>
                     children: [
                       SlideTransition(
                         position: _haqueAnimation,
-                        child: Text("Haque", style: AppWidget.HugeStyle()),
+                        child: Text("Haque", style: AppWidget.BigStyle()),
                       ),
                     ],
                   ),

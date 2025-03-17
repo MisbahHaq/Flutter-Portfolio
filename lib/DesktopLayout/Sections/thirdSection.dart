@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/Constants/WidgetSupport.dart';
+import 'package:portfolio/DesktopLayout/Constants/WidgetSupport.dart';
 
 class ThirdPage extends StatelessWidget {
   const ThirdPage({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/Constants/WidgetSupport.dart';
+import 'package:portfolio/DesktopLayout/Constants/WidgetSupport.dart';
 
 class FirstPage extends StatelessWidget {
   const FirstPage({super.key});

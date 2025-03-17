@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/Constants/WidgetSupport.dart';
-import 'package:portfolio/Pages/aboutPage.dart';
-import 'package:portfolio/Pages/landingPage.dart';
-import 'package:portfolio/Sections/thirdSection.dart';
-import 'package:portfolio/Pages/worksPage.dart';
+import 'package:portfolio/DesktopLayout/Constants/WidgetSupport.dart';
+import 'package:portfolio/DesktopLayout/Pages/contactPage.dart';
+import 'package:portfolio/DesktopLayout/Pages/landingPage.dart';
+import 'package:portfolio/DesktopLayout/Pages/works.dart';
 
-class ContactPage extends StatefulWidget {
-  const ContactPage({super.key});
+class AboutPage extends StatefulWidget {
+  const AboutPage({super.key});
 
   @override
-  State<ContactPage> createState() => _ContactPageState();
+  State<AboutPage> createState() => _AboutPageState();
 }
 
-class _ContactPageState extends State<ContactPage> {
+class _AboutPageState extends State<AboutPage> {
   void _showFullScreenModal(BuildContext context) {
     showDialog(
       context: context,
@@ -69,9 +68,7 @@ class _ContactPageState extends State<ContactPage> {
                     ],
                   ),
                 ),
-
                 const Spacer(),
-
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -108,9 +105,7 @@ class _ContactPageState extends State<ContactPage> {
                     ),
                   ],
                 ),
-
                 const Spacer(),
-
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 20,
@@ -151,7 +146,6 @@ class _ContactPageState extends State<ContactPage> {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: const EdgeInsets.only(left: 30, top: 30, right: 30),
@@ -174,77 +168,157 @@ class _ContactPageState extends State<ContactPage> {
                 ],
               ),
             ),
-            SizedBox(height: 300),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Row(
+            SizedBox(height: 250),
+            LayoutBuilder(
+              builder: (context, constraints) {
+                return Row(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("LET'S HAVE A CHAT", style: AppWidget.SmallerStyle()),
-                  ],
-                ),
-                SizedBox(height: 35),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("misbahhaque@yahoo.com", style: AppWidget.BigStyle()),
-                  ],
-                ),
-                SizedBox(height: 30),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Reach out with your name and your company details–any",
-                      textAlign: TextAlign.center,
-                      style: AppWidget.SmallerStyle(),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "helpful insights about your project and vision are appreciated.",
-                      textAlign: TextAlign.center,
-                      style: AppWidget.SmallerStyle(),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "We’d love to connect and help elevate your brand.",
-                      textAlign: TextAlign.center,
-                      style: AppWidget.SmallerStyle(),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 90),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "PHONE +92 331 3506 665",
-                        textAlign: TextAlign.center,
-                        style: AppWidget.SmallerStyle(),
+                    Flexible(
+                      flex: 1,
+                      child: Image.asset(
+                        "assets/images/dev.jpg",
+                        width:
+                            constraints.maxWidth > 800
+                                ? 500
+                                : constraints.maxWidth * 0.6,
+                        height: 300,
+                        fit: BoxFit.contain,
                       ),
-                      SizedBox(width: 20),
-                      Text(
-                        "linkedin.com/in/misbah-haq",
-                        textAlign: TextAlign.center,
-                        style: AppWidget.SmallerStyle(),
+                    ),
+                    SizedBox(width: 20),
+                    Flexible(
+                      flex: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "ABOUT",
+                              style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Container(
+                              width: 550,
+                              child: Text(
+                                "Founded by two friends with a shared vision, We began as an idea to harness our potential and showcase what we could achieve together.",
+                                style: AppWidget.SmallerStyle(),
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Container(
+                              width: 550,
+                              child: Text(
+                                "Today, it’s a growing agency that brings bold concepts to life through cutting-edge web design and development.",
+                                style: AppWidget.SmallerStyle(),
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Container(
+                              width: 550,
+                              child: Text(
+                                "Our story started with a simple goal: to create websites that don’t just look great but also deliver outstanding functionality and user experiences.",
+                                style: AppWidget.SmallerStyle(),
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Container(
+                              width: 550,
+                              child: Text(
+                                "Every website we build reflects our commitment to quality, attention to detail, and the belief that every client’s story deserves to be told uniquely.",
+                                style: AppWidget.SmallerStyle(),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ],
-                  ),
-                ),
-              ],
+                    ),
+                  ],
+                );
+              },
             ),
-            SizedBox(height: 300),
+            SizedBox(height: 50),
+            Container(
+              height: 500,
+              decoration: BoxDecoration(
+                border: Border(top: BorderSide(color: Colors.black)),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(height: 150),
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        return Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: 20),
+                              width:
+                                  constraints.maxWidth > 800
+                                      ? 600
+                                      : constraints.maxWidth * 0.8,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "SERVICES",
+                                    style: AppWidget.SmallerStyle(),
+                                  ),
+                                  SizedBox(height: 20),
+                                  Text(
+                                    "Freelancing isn’t just a job; it’s our craft. We thrive on collaborating with clients to understand their needs, bringing their ideas to life with precision and creativity. Whether it’s a sleek portfolio, a dynamic e-commerce site, or a complex web application, we’re here to make it happen.",
+                                    style: AppWidget.SmallerStyle(),
+                                    softWrap: true,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: 20),
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: 30),
+                              width:
+                                  constraints.maxWidth > 800
+                                      ? 300
+                                      : constraints.maxWidth * 0.4,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(height: 50),
+                                  Text(
+                                    "WEB & APP DESIGN",
+                                    style: AppWidget.SmallerStyle(),
+                                  ),
+                                  SizedBox(height: 8),
+                                  Text(
+                                    "DEVELOPMENT",
+                                    style: AppWidget.SmallerStyle(),
+                                  ),
+                                  SizedBox(height: 8),
+                                  Text(
+                                    "MARKETTING & SALES",
+                                    style: AppWidget.SmallerStyle(),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
             Container(
               height: 600,
               decoration: BoxDecoration(
