@@ -244,7 +244,7 @@ class _ContactPageState extends State<ContactPage> {
                 ),
               ],
             ),
-            SizedBox(height: 500),
+            SizedBox(height: 300),
             Container(
               height: 600,
               decoration: BoxDecoration(

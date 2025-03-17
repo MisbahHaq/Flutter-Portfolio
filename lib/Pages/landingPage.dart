@@ -15,20 +15,56 @@ class LandingPage extends StatefulWidget {
   State<LandingPage> createState() => _LandingPageState();
 }
 
-class _LandingPageState extends State<LandingPage> {
+class _LandingPageState extends State<LandingPage>
+    with SingleTickerProviderStateMixin {
   final ScrollController _scrollController = ScrollController();
   double _scrollOffset = 0;
+
+  late AnimationController _animationController;
+  late Animation<Offset> _misbahAnimation;
+  late Animation<Offset> _haqueAnimation;
+  late Animation<Offset> _webDevAnimation;
 
   @override
   void initState() {
     super.initState();
     _scrollController.addListener(_scrollListener);
+
+    // Animation setup
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+
+    _misbahAnimation = Tween<Offset>(
+      begin: Offset(0, 1), // Start from bottom
+      end: Offset(0, 0), // End at original position
+    ).animate(
+      CurvedAnimation(parent: _animationController, curve: Curves.easeOut),
+    );
+
+    _haqueAnimation = Tween<Offset>(
+      begin: Offset(0, 1), // Start from bottom
+      end: Offset(0, 0), // End at original position
+    ).animate(
+      CurvedAnimation(parent: _animationController, curve: Curves.easeOut),
+    );
+
+    _webDevAnimation = Tween<Offset>(
+      begin: Offset(0, 1), // Start from bottom
+      end: Offset(0, 0), // End at original position
+    ).animate(
+      CurvedAnimation(parent: _animationController, curve: Curves.easeOut),
+    );
+
+    _animationController.forward();
   }
 
   @override
   void dispose() {
     _scrollController.removeListener(_scrollListener);
     _scrollController.dispose();
+    _animationController.dispose();
     super.dispose();
   }
 
@@ -203,11 +239,15 @@ class _LandingPageState extends State<LandingPage> {
                     ),
                   ),
 
+                  // Animated Row for Misbah
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Center(
-                        child: Text("Misbah", style: AppWidget.HugeStyle()),
+                        child: SlideTransition(
+                          position: _misbahAnimation,
+                          child: Text("Misbah", style: AppWidget.HugeStyle()),
+                        ),
                       ),
                       Flexible(
                         child: Padding(
@@ -215,11 +255,14 @@ class _LandingPageState extends State<LandingPage> {
                             right: screenWidth > 600 ? 200 : 30,
                             top: 20,
                           ),
-                          child: Text(
-                            "Web & App Development",
-                            style: AppWidget.MidStyle(),
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 1,
+                          child: SlideTransition(
+                            position: _webDevAnimation,
+                            child: Text(
+                              "Web & App Development",
+                              style: AppWidget.MidStyle(),
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                            ),
                           ),
                         ),
                       ),
@@ -228,9 +271,15 @@ class _LandingPageState extends State<LandingPage> {
 
                   const SizedBox(height: 2),
 
+                  // Animated Row for Haque
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
-                    children: [Text("Haque", style: AppWidget.HugeStyle())],
+                    children: [
+                      SlideTransition(
+                        position: _haqueAnimation,
+                        child: Text("Haque", style: AppWidget.HugeStyle()),
+                      ),
+                    ],
                   ),
 
                   const SizedBox(height: 90),
