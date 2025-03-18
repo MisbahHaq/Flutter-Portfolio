@@ -1,6 +1,6 @@
+import 'package:Misbah/DesktopLayout/Constants/WidgetSupport.dart';
+import 'package:Misbah/DesktopLayout/Constants/caraousel.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/DesktopLayout/Constants/WidgetSupport.dart';
-import 'package:portfolio/DesktopLayout/Constants/caraousel.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({super.key});

@@ -1,6 +1,6 @@
+import 'package:Misbah/main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/main.dart';
 import 'projectDetailPage.dart';
 
 class ProjectPage extends StatefulWidget {

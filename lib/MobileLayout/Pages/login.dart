@@ -1,6 +1,6 @@
+import 'package:Misbah/main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/main.dart'; // Import the page to navigate to (Hidden)
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -20,12 +20,10 @@ class _LoginPageState extends State<LoginPage> {
     print("Email: $email, Password: $password");
     if (email == "Misbah" && password == "1234") {
       print("Login successful!");
-      // Navigate to the Hidden page using Navigator
+
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(
-          builder: (context) => Hidden(),
-        ), // Replace Hidden with the actual widget
+        MaterialPageRoute(builder: (context) => Hidden()),
       );
     } else {
       print("Login failed!");

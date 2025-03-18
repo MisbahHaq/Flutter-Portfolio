@@ -1,6 +1,6 @@
+import 'package:Misbah/main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/main.dart';
 
 class ExperiencePage extends StatelessWidget {
   const ExperiencePage({super.key});
@@ -14,9 +14,7 @@ class ExperiencePage extends StatelessWidget {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            SizedBox(
-              height: 30,
-            ),
+            SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -24,8 +22,10 @@ class ExperiencePage extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 20, top: 10),
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Hidden()));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Hidden()),
+                      );
                     },
                     child: Container(
                       child: Icon(
@@ -48,9 +48,7 @@ class ExperiencePage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
-                      height: 40,
-                    ),
+                    SizedBox(height: 40),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -83,9 +81,10 @@ class ExperiencePage extends StatelessWidget {
                     ),
                     const SizedBox(height: 15),
                     Container(
-                        height: 50,
-                        width: 50,
-                        child: Image.asset("assets/images/quo.png")),
+                      height: 50,
+                      width: 50,
+                      child: Image.asset("assets/images/quo.png"),
+                    ),
                     Text(
                       "Currently, I work as Assistant to HOD at The Location Lab, My role involves providing administrative, organizational, and operational support to ensure the smooth functioning of the department.",
                       textAlign: TextAlign.center,
