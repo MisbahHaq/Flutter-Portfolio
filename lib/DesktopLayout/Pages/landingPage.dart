@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/DesktopLayout/Constants/WidgetSupport.dart';
@@ -41,7 +40,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.flutter_dash, color: Colors.white, size: 100),
+            Icon(Icons.flutter_dash_rounded, color: Colors.white, size: 100),
             const SizedBox(height: 20),
             Text(
               'Welcome to My Portfolio',
