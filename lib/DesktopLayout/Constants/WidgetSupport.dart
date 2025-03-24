@@ -13,8 +13,28 @@ class AppWidget {
     );
   }
 
+  static TextStyle SmallStyle3() {
+    return GoogleFonts.roboto(
+      textStyle: TextStyle(
+        color: Colors.black,
+        fontSize: 19,
+        fontWeight: FontWeight.w500,
+      ),
+    );
+  }
+
   static TextStyle AlternateSmallStyle() {
     return GoogleFonts.playfairDisplay(
+      textStyle: TextStyle(
+        color: Colors.white,
+        fontSize: 19,
+        fontWeight: FontWeight.w500,
+      ),
+    );
+  }
+
+  static TextStyle AlternateSmallStyle2() {
+    return GoogleFonts.roboto(
       textStyle: TextStyle(
         color: Colors.white,
         fontSize: 19,
@@ -73,6 +93,16 @@ class AppWidget {
     );
   }
 
+  static TextStyle AlternateBigStyle() {
+    return GoogleFonts.playfairDisplay(
+      textStyle: TextStyle(
+        color: Colors.white,
+        fontSize: 30,
+        fontWeight: FontWeight.w500,
+      ),
+    );
+  }
+
   static TextStyle NavStyle() {
     return GoogleFonts.playfairDisplay(
       textStyle: TextStyle(
@@ -87,6 +117,16 @@ class AppWidget {
     return GoogleFonts.poppins(
       textStyle: TextStyle(
         color: Colors.black,
+        fontSize: 290,
+        fontWeight: FontWeight.w200,
+      ),
+    );
+  }
+
+  static TextStyle AlternateHugeStyle() {
+    return GoogleFonts.poppins(
+      textStyle: TextStyle(
+        color: Colors.white,
         fontSize: 290,
         fontWeight: FontWeight.w200,
       ),

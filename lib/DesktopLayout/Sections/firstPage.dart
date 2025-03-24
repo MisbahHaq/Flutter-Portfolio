@@ -18,14 +18,14 @@ class FirstPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(width: screenWidth * 0.1),
-              Text("01", style: AppWidget.SmallStyle()),
+              Text("01", style: AppWidget.SmallStyle3()),
               SizedBox(width: screenWidth * 0.1),
               Text(
                 "ELEVATING DIGITAL EXPERIENCES",
-                style: AppWidget.SmallStyle(),
+                style: AppWidget.SmallStyle3(),
               ),
               Spacer(),
-              Text("OUR STUDIO", style: AppWidget.SmallStyle()),
+              // Text("OUR STUDIO", style: AppWidget.SmallStyle()),
             ],
           ),
           SizedBox(height: screenHeight * 0.1),
@@ -33,38 +33,26 @@ class FirstPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "We craft elegant websites and memorable",
+                "Our story started with a simple goal:",
                 style: AppWidget.HeroStyle().copyWith(
                   fontSize: screenWidth * 0.023,
                 ),
               ),
               Text(
-                "digital experiences that blend timeless style",
+                "to create websites that don’t just look great",
                 style: AppWidget.HeroStyle().copyWith(
                   fontSize: screenWidth * 0.023,
                 ),
               ),
               Text(
-                "with seamless functionality.",
+                "but also deliver outstanding functionality",
                 style: AppWidget.HeroStyle().copyWith(
                   fontSize: screenWidth * 0.023,
                 ),
               ),
               SizedBox(height: 40),
               Text(
-                "Our designs aim for simplicity and beauty,",
-                style: AppWidget.HeroStyle().copyWith(
-                  fontSize: screenWidth * 0.023,
-                ),
-              ),
-              Text(
-                "alongside smooth interaction and refined",
-                style: AppWidget.HeroStyle().copyWith(
-                  fontSize: screenWidth * 0.023,
-                ),
-              ),
-              Text(
-                "visual storytelling.",
+                "and user experiences.",
                 style: AppWidget.HeroStyle().copyWith(
                   fontSize: screenWidth * 0.023,
                 ),

@@ -18,11 +18,17 @@ class SecondPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(width: screenWidth * 0.1),
-              Text("02", style: AppWidget.AlternateSmallStyle()),
+              Text("02", style: AppWidget.AlternateSmallStyle2()),
               SizedBox(width: screenWidth * 0.1),
-              Text("HIGHLIGHTS", style: AppWidget.AlternateSmallStyle()),
+              Text(
+                "CRAFTED WITH LOVE",
+                style: AppWidget.AlternateSmallStyle2(),
+              ),
               Spacer(),
-              Text("EXPLORE PROJECTS", style: AppWidget.AlternateSmallStyle()),
+              Text(
+                "MY RECENT PROJECTS",
+                style: AppWidget.AlternateSmallStyle2(),
+              ),
               SizedBox(width: screenWidth * 0.1),
             ],
           ),

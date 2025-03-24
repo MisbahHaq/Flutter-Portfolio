@@ -1,11 +1,7 @@
 import 'dart:async';
 import 'package:Misbah/DesktopLayout/Constants/WidgetSupport.dart';
-import 'package:Misbah/DesktopLayout/Pages/aboutPage.dart';
-import 'package:Misbah/DesktopLayout/Pages/contactPage.dart';
-import 'package:Misbah/DesktopLayout/Pages/works.dart';
-import 'package:Misbah/DesktopLayout/Sections/firstSection.dart';
-import 'package:Misbah/DesktopLayout/Sections/secondSection.dart';
-import 'package:Misbah/DesktopLayout/Sections/thirdSection.dart';
+import 'package:Misbah/DesktopLayout/Sections/firstPage.dart';
+import 'package:Misbah/DesktopLayout/Sections/secondPage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -122,143 +118,13 @@ class _LandingPageState extends State<LandingPage>
     });
   }
 
-  void _showFullScreenModal(BuildContext context) {
-    showDialog(
-      context: context,
-      barrierDismissible: true,
-      builder: (context) {
-        return Dialog(
-          insetPadding: EdgeInsets.zero,
-          backgroundColor: Colors.transparent,
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            color: Colors.black,
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 20,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => LandingPage(),
-                            ),
-                          );
-                        },
-                        child: Text(
-                          "M — H",
-                          style: GoogleFonts.playfairDisplay(
-                            fontSize: 24,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () => Navigator.pop(context),
-                        child: Padding(
-                          padding: const EdgeInsets.only(right: 50, top: 25),
-                          child: Text(
-                            "CLOSE",
-                            style: GoogleFonts.playfairDisplay(
-                              fontSize: 14,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-
-                const Spacer(),
-
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Works()),
-                        );
-                      },
-                      child: const MenuItem(title: "WORKS"),
-                    ),
-                    const DividerLine(),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => AboutPage()),
-                        );
-                      },
-                      child: const MenuItem(title: "ABOUT"),
-                    ),
-                    const DividerLine(),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ContactPage(),
-                          ),
-                        );
-                      },
-                      child: const MenuItem(title: "CONTACT"),
-                    ),
-                  ],
-                ),
-
-                const Spacer(),
-
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 20,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "MADE WITH FLUTTER",
-                        style: GoogleFonts.playfairDisplay(
-                          fontSize: 12,
-                          color: Colors.white,
-                        ),
-                      ),
-                      Text(
-                        "INSTAGRAM",
-                        style: GoogleFonts.playfairDisplay(
-                          fontSize: 12,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(248, 246, 241, 1),
       body: AnimatedContainer(
         duration: const Duration(milliseconds: 500),
-        color: _scrollOffset > 1500 ? Colors.black : Colors.transparent,
+        color: _scrollOffset > 1800 ? Colors.black : Colors.transparent,
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           controller: _scrollController,
@@ -277,13 +143,7 @@ class _LandingPageState extends State<LandingPage>
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("M — H", style: AppWidget.BigStyle()),
-                        GestureDetector(
-                          onTap: () => _showFullScreenModal(context),
-                          child: Text("MENU", style: AppWidget.BigStyle()),
-                        ),
-                      ],
+                      children: [Text("M — H", style: AppWidget.BigStyle())],
                     ),
                   ),
                   Row(
@@ -329,9 +189,170 @@ class _LandingPageState extends State<LandingPage>
                   const SizedBox(height: 90),
                   const FirstPage(),
                   const SizedBox(height: 260),
+                  Container(
+                    height: 500,
+                    decoration: BoxDecoration(
+                      border: Border(top: BorderSide(color: Colors.black)),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(height: 150),
+                          LayoutBuilder(
+                            builder: (context, constraints) {
+                              return Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 20,
+                                    ),
+                                    width:
+                                        constraints.maxWidth > 800
+                                            ? 600
+                                            : constraints.maxWidth * 0.8,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "SERVICES",
+                                          style: AppWidget.MidStyle(),
+                                        ),
+                                        SizedBox(height: 20),
+                                        Text(
+                                          "Freelancing isn’t just a job; it’s our craft. We thrive on collaborating with clients to understand their needs, bringing their ideas to life with precision and creativity. Whether it’s a sleek portfolio, a dynamic e-commerce site, or a complex web application, we’re here to make it happen.",
+                                          style: AppWidget.SmallStyle(),
+                                          softWrap: true,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(width: 20),
+                                  Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 30,
+                                    ),
+                                    width:
+                                        constraints.maxWidth > 800
+                                            ? 300
+                                            : constraints.maxWidth * 0.4,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(height: 70),
+                                        Text(
+                                          "WEB & APP DESIGN",
+                                          style: AppWidget.SmallerStyle(),
+                                        ),
+                                        SizedBox(height: 8),
+                                        Text(
+                                          "DEVELOPMENT",
+                                          style: AppWidget.SmallerStyle(),
+                                        ),
+                                        SizedBox(height: 8),
+                                        Text(
+                                          "MARKETTING & SALES",
+                                          style: AppWidget.SmallerStyle(),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              );
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                   const SecondPage(),
                   const SizedBox(height: 90),
-                  const ThirdPage(),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 300),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "LET'S HAVE A CHAT",
+                                style: AppWidget.AlternateSmallerStyle(),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 35),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "misbahhaque@yahoo.com",
+                                style: AppWidget.AlternateBigStyle(),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 30),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Reach out with your name and your company details–any",
+                                textAlign: TextAlign.center,
+                                style: AppWidget.AlternateSmallerStyle(),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "helpful insights about your project and vision are appreciated.",
+                                textAlign: TextAlign.center,
+                                style: AppWidget.AlternateSmallerStyle(),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "We’d love to connect and help elevate your brand.",
+                                textAlign: TextAlign.center,
+                                style: AppWidget.AlternateSmallerStyle(),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 90),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "PHONE +92 331 3506 665",
+                                  textAlign: TextAlign.center,
+                                  style: AppWidget.AlternateSmallerStyle(),
+                                ),
+                                SizedBox(width: 20),
+                                Text(
+                                  "linkedin.com/in/misbah-haq",
+                                  textAlign: TextAlign.center,
+                                  style: AppWidget.AlternateSmallerStyle(),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ],
               );
             },
