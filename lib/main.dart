@@ -1,6 +1,9 @@
 import 'package:Misbah/DesktopLayout/Pages/landingPage.dart';
 import 'package:Misbah/HomePage.dart';
+import 'package:Misbah/MobileLayout/Pages/landingPage.dart';
+import 'package:Misbah/responsive_Layout.dart';
 import 'package:flutter/material.dart';
+import 'package:get/state_manager.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 
 void main() {
@@ -12,9 +15,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SplashScreenPageDesktop(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: HomePage());
   }
 }

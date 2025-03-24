@@ -1,19 +1,17 @@
 import 'dart:async';
-import 'package:Misbah/DesktopLayout/Constants/WidgetSupport.dart';
 import 'package:Misbah/DesktopLayout/Sections/firstPage.dart';
 import 'package:Misbah/DesktopLayout/Sections/secondPage.dart';
+import 'package:Misbah/MobileLayout/Constants/WidgetSupport.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-class SplashScreenPageDesktop extends StatefulWidget {
-  const SplashScreenPageDesktop({super.key});
+class SplashScreenPageMobile extends StatefulWidget {
+  const SplashScreenPageMobile({super.key});
 
   @override
-  _SplashScreenPageDesktopState createState() =>
-      _SplashScreenPageDesktopState();
+  _SplashScreenPageMobileState createState() => _SplashScreenPageMobileState();
 }
 
-class _SplashScreenPageDesktopState extends State<SplashScreenPageDesktop> {
+class _SplashScreenPageMobileState extends State<SplashScreenPageMobile> {
   @override
   void initState() {
     super.initState();
@@ -24,7 +22,7 @@ class _SplashScreenPageDesktopState extends State<SplashScreenPageDesktop> {
     Timer(const Duration(seconds: 5), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const LandingPage()),
+        MaterialPageRoute(builder: (context) => const LandingPageMobile()),
       );
     });
   }
@@ -54,14 +52,14 @@ class _SplashScreenPageDesktopState extends State<SplashScreenPageDesktop> {
   }
 }
 
-class LandingPage extends StatefulWidget {
-  const LandingPage({super.key});
+class LandingPageMobile extends StatefulWidget {
+  const LandingPageMobile({super.key});
 
   @override
-  State<LandingPage> createState() => _LandingPageState();
+  State<LandingPageMobile> createState() => _LandingPageMobileState();
 }
 
-class _LandingPageState extends State<LandingPage>
+class _LandingPageMobileState extends State<LandingPageMobile>
     with SingleTickerProviderStateMixin {
   final ScrollController _scrollController = ScrollController();
   double _scrollOffset = 0;
@@ -125,7 +123,7 @@ class _LandingPageState extends State<LandingPage>
       backgroundColor: const Color.fromRGBO(248, 246, 241, 1),
       body: AnimatedContainer(
         duration: const Duration(milliseconds: 500),
-        color: _scrollOffset > 1800 ? Colors.black : Colors.transparent,
+        color: _scrollOffset > 500 ? Colors.black : Colors.transparent,
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           controller: _scrollController,
@@ -135,6 +133,7 @@ class _LandingPageState extends State<LandingPage>
               double screenWidth = constraints.maxWidth;
 
               return Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(
@@ -144,63 +143,54 @@ class _LandingPageState extends State<LandingPage>
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [Text("M — H", style: AppWidget.BigStyle())],
+                      children: [
+                        Text("M — H", style: MobileAppWidget.MobileBigStyle()),
+                      ],
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Center(
-                        child: SlideTransition(
-                          position: _misbahAnimation,
-                          child: Text("Misbah", style: AppWidget.HugeStyle()),
-                        ),
-                      ),
-                      Flexible(
-                        child: Padding(
-                          padding: EdgeInsets.only(
-                            right: screenWidth > 600 ? 200 : 30,
-                            top: 20,
-                          ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 50),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Center(
                           child: SlideTransition(
-                            position: _webDevAnimation,
+                            position: _misbahAnimation,
                             child: Text(
-                              "Web & App Development",
-                              style: AppWidget.MidStyle(),
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 1,
+                              "Misbah",
+                              style: MobileAppWidget.MobileHugeStyle(),
                             ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-
-                  const SizedBox(height: 2),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      SlideTransition(
-                        position: _haqueAnimation,
-                        child: Text("Haque", style: AppWidget.HugeStyle()),
-                      ),
-                    ],
-                  ),
-
-                  const SizedBox(height: 90),
-                  const FirstPage(),
-                  const SizedBox(height: 260),
-                  Container(
-                    height: 500,
-                    decoration: BoxDecoration(
-                      border: Border(top: BorderSide(color: Colors.black)),
+                      ],
                     ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 50),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        SlideTransition(
+                          position: _haqueAnimation,
+                          child: Text(
+                            "Haque",
+                            style: MobileAppWidget.MobileHugeStyle(),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 30),
+                  const FirstPage(),
+                  const SizedBox(height: 30),
+                  Container(
+                    height: 250,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 30),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          SizedBox(height: 150),
+                          SizedBox(height: 50),
                           LayoutBuilder(
                             builder: (context, constraints) {
                               return Row(
@@ -212,53 +202,25 @@ class _LandingPageState extends State<LandingPage>
                                       horizontal: 20,
                                     ),
                                     width:
-                                        constraints.maxWidth > 800
-                                            ? 600
+                                        constraints.maxWidth > 900
+                                            ? 700
                                             : constraints.maxWidth * 0.8,
                                     child: Column(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                          CrossAxisAlignment.center,
                                       children: [
                                         Text(
                                           "SERVICES",
-                                          style: AppWidget.MidStyle(),
+                                          style:
+                                              MobileAppWidget.MobileMidStyle(),
                                         ),
                                         SizedBox(height: 20),
                                         Text(
-                                          "Freelancing isn’t just a job; it’s our craft. We thrive on collaborating with clients to understand their needs, bringing their ideas to life with precision and creativity. Whether it’s a sleek portfolio, a dynamic e-commerce site, or a complex web application, we’re here to make it happen.",
-                                          style: AppWidget.SmallStyle(),
+                                          textAlign: TextAlign.center,
+                                          "Freelancing isn’t just a job; it’s our craft. We thrive on collaborating with clients to understand their needs, bringing their ideas to life with precision and creativity. Whether it’s an e-commerce site, or a complex web application, we’re here to make it happen.",
+                                          style:
+                                              MobileAppWidget.MobileBigStyle(),
                                           softWrap: true,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(width: 20),
-                                  Container(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 30,
-                                    ),
-                                    width:
-                                        constraints.maxWidth > 800
-                                            ? 300
-                                            : constraints.maxWidth * 0.4,
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        SizedBox(height: 70),
-                                        Text(
-                                          "WEB & APP DESIGN",
-                                          style: AppWidget.SmallerStyle(),
-                                        ),
-                                        SizedBox(height: 8),
-                                        Text(
-                                          "DEVELOPMENT",
-                                          style: AppWidget.SmallerStyle(),
-                                        ),
-                                        SizedBox(height: 8),
-                                        Text(
-                                          "MARKETTING & SALES",
-                                          style: AppWidget.SmallerStyle(),
                                         ),
                                       ],
                                     ),
@@ -271,12 +233,13 @@ class _LandingPageState extends State<LandingPage>
                       ),
                     ),
                   ),
+                  const SizedBox(height: 50),
                   const SecondPage(),
                   const SizedBox(height: 50),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: 100),
+                      SizedBox(height: 70),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
@@ -285,17 +248,19 @@ class _LandingPageState extends State<LandingPage>
                             children: [
                               Text(
                                 "LET'S HAVE A CHAT",
-                                style: AppWidget.AlternateSmallerStyle(),
+                                style:
+                                    MobileAppWidget.MobileAlternateFooterStyle(),
                               ),
                             ],
                           ),
-                          SizedBox(height: 25),
+                          SizedBox(height: 15),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
                                 "misbahhaque@yahoo.com",
-                                style: AppWidget.AlternateBigStyle(),
+                                style:
+                                    MobileAppWidget.MobileAlternateFooterSmallStyle(),
                               ),
                             ],
                           ),
@@ -306,7 +271,8 @@ class _LandingPageState extends State<LandingPage>
                               Text(
                                 "Reach out with your name and your company details–any",
                                 textAlign: TextAlign.center,
-                                style: AppWidget.AlternateSmallerStyle(),
+                                style:
+                                    MobileAppWidget.MobileAlternateFooterSmallerStyle(),
                               ),
                             ],
                           ),
@@ -316,7 +282,8 @@ class _LandingPageState extends State<LandingPage>
                               Text(
                                 "helpful insights about your project and vision are appreciated.",
                                 textAlign: TextAlign.center,
-                                style: AppWidget.AlternateSmallerStyle(),
+                                style:
+                                    MobileAppWidget.MobileAlternateFooterSmallerStyle(),
                               ),
                             ],
                           ),
@@ -326,7 +293,8 @@ class _LandingPageState extends State<LandingPage>
                               Text(
                                 "We’d love to connect and help elevate your brand.",
                                 textAlign: TextAlign.center,
-                                style: AppWidget.AlternateSmallerStyle(),
+                                style:
+                                    MobileAppWidget.MobileAlternateFooterSmallerStyle(),
                               ),
                             ],
                           ),
@@ -339,13 +307,15 @@ class _LandingPageState extends State<LandingPage>
                                 Text(
                                   "PHONE +92 331 3506 665",
                                   textAlign: TextAlign.center,
-                                  style: AppWidget.AlternateSmallerStyle(),
+                                  style:
+                                      MobileAppWidget.MobileAlternateFooterSmallerStyle(),
                                 ),
                                 SizedBox(width: 20),
                                 Text(
                                   "linkedin.com/in/misbah-haq",
                                   textAlign: TextAlign.center,
-                                  style: AppWidget.AlternateSmallerStyle(),
+                                  style:
+                                      MobileAppWidget.MobileAlternateFooterSmallerStyle(),
                                 ),
                               ],
                             ),
