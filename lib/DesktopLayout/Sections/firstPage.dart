@@ -45,14 +45,7 @@ class FirstPage extends StatelessWidget {
                 ),
               ),
               Text(
-                "but also deliver outstanding functionality",
-                style: AppWidget.HeroStyle().copyWith(
-                  fontSize: screenWidth * 0.023,
-                ),
-              ),
-              SizedBox(height: 40),
-              Text(
-                "and user experiences.",
+                "but also deliver outstanding functionality and user experiences.",
                 style: AppWidget.HeroStyle().copyWith(
                   fontSize: screenWidth * 0.023,
                 ),
