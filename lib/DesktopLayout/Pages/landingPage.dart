@@ -271,11 +271,11 @@ class _LandingPageState extends State<LandingPage>
                     ),
                   ),
                   const SecondPage(),
-                  const SizedBox(height: 90),
+                  const SizedBox(height: 50),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: 300),
+                      SizedBox(height: 100),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
@@ -288,7 +288,7 @@ class _LandingPageState extends State<LandingPage>
                               ),
                             ],
                           ),
-                          SizedBox(height: 35),
+                          SizedBox(height: 25),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -298,7 +298,7 @@ class _LandingPageState extends State<LandingPage>
                               ),
                             ],
                           ),
-                          SizedBox(height: 30),
+                          SizedBox(height: 20),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -329,7 +329,7 @@ class _LandingPageState extends State<LandingPage>
                               ),
                             ],
                           ),
-                          SizedBox(height: 90),
+                          SizedBox(height: 50),
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 20),
                             child: Row(
@@ -356,54 +356,6 @@ class _LandingPageState extends State<LandingPage>
                 ],
               );
             },
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class MenuItem extends StatefulWidget {
-  final String title;
-  const MenuItem({super.key, required this.title});
-
-  @override
-  _MenuItemState createState() => _MenuItemState();
-}
-
-class _MenuItemState extends State<MenuItem> {
-  bool _isHovered = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16.0),
-      child: MouseRegion(
-        onEnter: (_) {
-          setState(() {
-            _isHovered = true;
-          });
-        },
-        onExit: (_) {
-          setState(() {
-            _isHovered = false;
-          });
-        },
-        child: Text(
-          widget.title,
-          style: GoogleFonts.playfairDisplay(
-            fontSize: 75,
-            color: _isHovered ? Colors.white : Colors.white,
-            shadows:
-                _isHovered
-                    ? [
-                      Shadow(
-                        blurRadius: 5.0,
-                        color: Colors.white.withOpacity(0.8),
-                        offset: Offset(0, 0),
-                      ),
-                    ]
-                    : [],
           ),
         ),
       ),
