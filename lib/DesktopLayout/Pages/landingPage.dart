@@ -5,14 +5,15 @@ import 'package:Misbah/DesktopLayout/Sections/secondPage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SplashScreenPage extends StatefulWidget {
-  const SplashScreenPage({super.key});
+class SplashScreenPageDesktop extends StatefulWidget {
+  const SplashScreenPageDesktop({super.key});
 
   @override
-  _SplashScreenPageState createState() => _SplashScreenPageState();
+  _SplashScreenPageDesktopState createState() =>
+      _SplashScreenPageDesktopState();
 }
 
-class _SplashScreenPageState extends State<SplashScreenPage> {
+class _SplashScreenPageDesktopState extends State<SplashScreenPageDesktop> {
   @override
   void initState() {
     super.initState();
