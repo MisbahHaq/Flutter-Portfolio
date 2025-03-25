@@ -13,6 +13,7 @@ class FirstPage extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
       child: Column(
         children: [
+          SizedBox(height: 90),
           SizedBox(height: screenHeight * 0.1),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -25,7 +26,6 @@ class FirstPage extends StatelessWidget {
                 style: AppWidget.SmallStyle3(),
               ),
               Spacer(),
-              // Text("OUR STUDIO", style: AppWidget.SmallStyle()),
             ],
           ),
           SizedBox(height: screenHeight * 0.1),
