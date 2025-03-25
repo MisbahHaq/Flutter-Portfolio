@@ -2,8 +2,8 @@ import 'package:Misbah/DesktopLayout/Constants/caraousel.dart';
 import 'package:Misbah/MobileLayout/Constants/WidgetSupport.dart';
 import 'package:flutter/material.dart';
 
-class SecondPage extends StatelessWidget {
-  const SecondPage({super.key});
+class SecondPageMobile extends StatelessWidget {
+  const SecondPageMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +18,11 @@ class SecondPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(width: screenWidth * 0.1),
-              Text("02", style: MobileAppWidget.MobileAlternateSmallStyle2()),
+              Text("02", style: MobileAppWidget.MobileAlternateSmallStyleNew()),
               SizedBox(width: screenWidth * 0.1),
               Text(
                 "MY RECENT PROJECTS",
-                style: MobileAppWidget.MobileAlternateSmallStyle2(),
+                style: MobileAppWidget.MobileAlternateSmallStyleNew(),
               ),
               Spacer(),
             ],

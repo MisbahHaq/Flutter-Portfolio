@@ -17,7 +17,7 @@ class MobileAppWidget {
     return GoogleFonts.roboto(
       textStyle: TextStyle(
         color: Colors.black,
-        fontSize: 12,
+        fontSize: 10,
         fontWeight: FontWeight.w500,
       ),
     );
@@ -37,6 +37,16 @@ class MobileAppWidget {
     return GoogleFonts.roboto(
       textStyle: TextStyle(
         color: Colors.white,
+        fontSize: 12,
+        fontWeight: FontWeight.w500,
+      ),
+    );
+  }
+
+  static TextStyle MobileAlternateSmallStyleNew() {
+    return GoogleFonts.roboto(
+      textStyle: TextStyle(
+        color: Color.fromRGBO(248, 246, 241, 1),
         fontSize: 12,
         fontWeight: FontWeight.w500,
       ),
@@ -157,7 +167,7 @@ class MobileAppWidget {
     return GoogleFonts.roboto(
       textStyle: TextStyle(
         color: Colors.white,
-        fontSize: 25,
+        fontSize: 20,
         fontWeight: FontWeight.w500,
       ),
     );
@@ -167,7 +177,7 @@ class MobileAppWidget {
     return GoogleFonts.playfairDisplay(
       textStyle: TextStyle(
         color: Colors.white,
-        fontSize: 20,
+        fontSize: 15,
         fontWeight: FontWeight.w500,
       ),
     );
@@ -177,7 +187,7 @@ class MobileAppWidget {
     return GoogleFonts.roboto(
       textStyle: TextStyle(
         color: Colors.white,
-        fontSize: 12,
+        fontSize: 10,
         fontWeight: FontWeight.w500,
       ),
     );

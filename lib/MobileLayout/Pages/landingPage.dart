@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:Misbah/DesktopLayout/Sections/firstPage.dart';
 import 'package:Misbah/DesktopLayout/Sections/secondPage.dart';
 import 'package:Misbah/MobileLayout/Constants/WidgetSupport.dart';
+import 'package:Misbah/MobileLayout/Sections/firstPage.dart';
+import 'package:Misbah/MobileLayout/Sections/secondPage.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreenPageMobile extends StatefulWidget {
@@ -131,7 +133,6 @@ class _LandingPageMobileState extends State<LandingPageMobile>
           child: LayoutBuilder(
             builder: (context, constraints) {
               double screenWidth = constraints.maxWidth;
-
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -149,7 +150,7 @@ class _LandingPageMobileState extends State<LandingPageMobile>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 50),
+                    padding: const EdgeInsets.only(left: 50, top: 40),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -181,10 +182,10 @@ class _LandingPageMobileState extends State<LandingPageMobile>
                     ),
                   ),
                   const SizedBox(height: 30),
-                  const FirstPage(),
+                  const FirstPageMobile(),
                   const SizedBox(height: 30),
                   Container(
-                    height: 250,
+                    height: 270,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 30),
                       child: Column(
@@ -234,7 +235,7 @@ class _LandingPageMobileState extends State<LandingPageMobile>
                     ),
                   ),
                   const SizedBox(height: 50),
-                  const SecondPage(),
+                  const SecondPageMobile(),
                   const SizedBox(height: 50),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -253,7 +254,7 @@ class _LandingPageMobileState extends State<LandingPageMobile>
                               ),
                             ],
                           ),
-                          SizedBox(height: 15),
+                          SizedBox(height: 10),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [

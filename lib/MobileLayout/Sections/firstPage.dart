@@ -1,8 +1,8 @@
 import 'package:Misbah/MobileLayout/Constants/WidgetSupport.dart';
 import 'package:flutter/material.dart';
 
-class FirstPage extends StatelessWidget {
-  const FirstPage({super.key});
+class FirstPageMobile extends StatelessWidget {
+  const FirstPageMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +24,9 @@ class FirstPage extends StatelessWidget {
                 "ELEVATING DIGITAL EXPERIENCES",
                 style: MobileAppWidget.MobileSmallStyle3(),
               ),
-              Spacer(),
-              // Text("OUR STUDIO", style: AppWidget.SmallStyle()),
             ],
           ),
-          SizedBox(height: screenHeight * 0.1),
+          SizedBox(height: 20),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
