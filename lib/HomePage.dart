@@ -1,5 +1,5 @@
 import 'package:Misbah/DesktopLayout/Pages/landingPage.dart';
-import 'package:Misbah/MobileLayout/Pages/landingPage.dart';
+import 'package:Misbah/MobileLayout/Pages/landingPageMobile.dart';
 import 'package:Misbah/responsive_Layout.dart';
 import 'package:flutter/material.dart';
 

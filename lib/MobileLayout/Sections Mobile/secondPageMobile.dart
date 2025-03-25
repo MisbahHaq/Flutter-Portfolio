@@ -1,9 +1,9 @@
-import 'package:Misbah/DesktopLayout/Constants/WidgetSupport.dart';
-import 'package:Misbah/DesktopLayout/Constants/caraousel.dart';
+import 'package:Misbah/DesktopLayout/Constants%20Desktop/caraousel.dart';
+import 'package:Misbah/MobileLayout/Constants%20Mobile/WidgetSupport.dart';
 import 'package:flutter/material.dart';
 
-class SecondPage extends StatelessWidget {
-  const SecondPage({super.key});
+class SecondPageMobile extends StatelessWidget {
+  const SecondPageMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,31 +12,29 @@ class SecondPage extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 90),
           Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(width: screenWidth * 0.1),
-              Text("02", style: AppWidget.AlternateSmallStyle2()),
+              Text("02", style: MobileAppWidget.MobileAlternateSmallStyleNew()),
               SizedBox(width: screenWidth * 0.1),
-              Text(
-                "CRAFTED WITH LOVE",
-                style: AppWidget.AlternateSmallStyle2(),
-              ),
-              Spacer(),
               Text(
                 "MY RECENT PROJECTS",
-                style: AppWidget.AlternateSmallStyle2(),
+                style: MobileAppWidget.MobileAlternateSmallStyleNew(),
               ),
-              SizedBox(width: screenWidth * 0.1),
+              Spacer(),
             ],
           ),
-          SizedBox(height: 90),
+          const SizedBox(height: 50),
           Container(
             width: 700,
             height: 500,
-            decoration: BoxDecoration(color: Colors.grey),
+            decoration: BoxDecoration(
+              color: Colors.grey,
+              borderRadius: BorderRadius.circular(10),
+            ),
             child: Column(children: [SizedBox(height: 100), CaraouselFirst()]),
           ),
         ],
