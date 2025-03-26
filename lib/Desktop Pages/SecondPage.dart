@@ -25,15 +25,15 @@ class _SecondPageState extends State<SecondPage> {
       'mediaAsset': 'assets/videos/0307.mp4', // This is a video
     },
     {
-      'title': 'FoodGo',
-      'subtitle':
-          'FoodGo is a mobile app designed to satisfy your cravings instantly. Order from a wide variety of fast food options—burgers, pizzas, fries, and more—with quick doorstep delivery, bringing convenience and deliciousness right to you.',
-      'mediaAsset': 'assets/images/foodgo.png', // This is an image
+      'title': 'FOODGO',
+      'subtitle': '',
+      'mediaAsset': 'assets/videos/foodgo.mp4', // This is an image
     },
     {
-      'title': 'RetroAlly',
-      'subtitle': 'A web app for remote retrospectives',
-      'mediaAsset': 'assets/videos/0303.mp4', // This is a video
+      'title': 'BLINKIT CLONE',
+      'subtitle':
+          'Blinkit Clone is a mobile app designed to bring grocery shopping to your doorstep in no time',
+      'mediaAsset': 'assets/videos/blinkit.mp4', // This is a video
     },
   ];
 
