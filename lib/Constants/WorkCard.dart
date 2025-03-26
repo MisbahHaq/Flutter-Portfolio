@@ -5,13 +5,13 @@ import 'package:video_player/video_player.dart';
 class WorkCard extends StatefulWidget {
   final String title;
   final String subtitle;
-  final String videoAsset;
+  final String mediaAsset;
 
   const WorkCard({
     super.key,
     required this.title,
     required this.subtitle,
-    required this.videoAsset,
+    required this.mediaAsset,
   });
 
   @override
@@ -19,23 +19,31 @@ class WorkCard extends StatefulWidget {
 }
 
 class _WorkCardState extends State<WorkCard> {
-  late VideoPlayerController _controller;
+  VideoPlayerController? _controller;
   bool isHovered = false;
+  bool isImage = false;
 
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset(widget.videoAsset)
-      ..initialize().then((_) {
-        setState(() {});
-        _controller.setLooping(true);
-        _controller.play();
-      });
+    isImage =
+        widget.mediaAsset.endsWith('.png') ||
+        widget.mediaAsset.endsWith('.jpg') ||
+        widget.mediaAsset.endsWith('.jpeg');
+
+    if (!isImage) {
+      _controller = VideoPlayerController.asset(widget.mediaAsset)
+        ..initialize().then((_) {
+          setState(() {});
+          _controller!.setLooping(true);
+          _controller!.play();
+        });
+    }
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    _controller?.dispose();
     super.dispose();
   }
 
@@ -63,13 +71,12 @@ class _WorkCardState extends State<WorkCard> {
                 alignment: Alignment.center,
                 child: Container(
                   width: cardWidth * 0.96,
-                  height: 350,
+                  height: 550,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black26,
-                        spreadRadius: 0,
                         blurRadius: isHovered ? 6 : 3,
                         offset:
                             isHovered ? const Offset(2, 4) : const Offset(2, 2),
@@ -82,12 +89,19 @@ class _WorkCardState extends State<WorkCard> {
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child:
-                  _controller.value.isInitialized
-                      ? AspectRatio(
-                        aspectRatio: _controller.value.aspectRatio,
-                        child: VideoPlayer(_controller),
+                  isImage
+                      ? Image.asset(
+                        widget.mediaAsset,
+                        width: cardWidth,
+                        height: 500,
+                        fit: BoxFit.cover,
                       )
-                      : const Center(child: CircularProgressIndicator()),
+                      : (_controller != null && _controller!.value.isInitialized
+                          ? AspectRatio(
+                            aspectRatio: _controller!.value.aspectRatio,
+                            child: VideoPlayer(_controller!),
+                          )
+                          : const Center(child: CircularProgressIndicator())),
             ),
             Positioned(
               top: 10,
@@ -104,8 +118,8 @@ class _WorkCardState extends State<WorkCard> {
                     ),
                   ),
                   const SizedBox(height: 5),
-                  Container(
-                    width: 200,
+                  SizedBox(
+                    width: cardWidth * 0.8,
                     child: Text(
                       widget.subtitle,
                       textAlign: TextAlign.start,

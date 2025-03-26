@@ -16,24 +16,24 @@ class _SecondPageState extends State<SecondPage> {
       'title': 'CYBERFICTION',
       'subtitle':
           'A simple website built with HTML, CSS, and JavaScript that features a 3D-looking image effect that moves when the user scrolls.',
-      'videoAsset': 'assets/videos/0303.mp4',
+      'mediaAsset': 'assets/videos/0303.mp4', // This is a video
     },
     {
       'title': 'ZELT CLONE',
       'subtitle':
           'A fully responsive clone of the Zelt website, built using HTML, CSS, and JavaScript.',
-      'videoAsset': 'assets/videos/0307.mp4',
+      'mediaAsset': 'assets/videos/0307.mp4', // This is a video
     },
     {
       'title': 'FoodGo',
       'subtitle':
           'FoodGo is a mobile app designed to satisfy your cravings instantly. Order from a wide variety of fast food options—burgers, pizzas, fries, and more—with quick doorstep delivery, bringing convenience and deliciousness right to you.',
-      'videoAsset': 'assets/images/foodgo.png',
+      'mediaAsset': 'assets/images/foodgo.png', // This is an image
     },
     {
       'title': 'RetroAlly',
       'subtitle': 'A web app for remote retrospectives',
-      'videoAsset': 'assets/videos/0303.mp4',
+      'mediaAsset': 'assets/videos/0303.mp4', // This is a video
     },
   ];
 
@@ -72,7 +72,8 @@ class _SecondPageState extends State<SecondPage> {
                         child: WorkCard(
                           title: item['title']!,
                           subtitle: item['subtitle']!,
-                          videoAsset: item['videoAsset']!,
+
+                          mediaAsset: item['mediaAsset']!,
                         ),
                       );
                     }).toList(),
