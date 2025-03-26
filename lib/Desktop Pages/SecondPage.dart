@@ -16,31 +16,29 @@ class _SecondPageState extends State<SecondPage> {
       'title': 'CYBERFICTION',
       'subtitle':
           'A simple website built with HTML, CSS, and JavaScript that features a 3D-looking image effect that moves when the user scrolls.',
-      'mediaAsset': 'assets/videos/0303.mp4', // This is a video
+      'mediaAsset': 'assets/videos/0303.mp4',
     },
     {
       'title': 'ZELT CLONE',
       'subtitle':
           'A fully responsive clone of the Zelt website, built using HTML, CSS, and JavaScript.',
-      'mediaAsset': 'assets/videos/0307.mp4', // This is a video
+      'mediaAsset': 'assets/videos/0307.mp4',
     },
     {
       'title': 'FOODGO',
       'subtitle': '',
-      'mediaAsset': 'assets/videos/foodgo.mp4', // This is an image
+      'mediaAsset': 'assets/videos/foodgo.mp4',
     },
     {
       'title': 'BLINKIT CLONE',
-      'subtitle':
-          'Blinkit Clone is a mobile app designed to bring grocery shopping to your doorstep in no time',
-      'mediaAsset': 'assets/videos/blinkit.mp4', // This is a video
+      'subtitle': '',
+      'mediaAsset': 'assets/videos/blinkit.mp4',
     },
   ];
 
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: SingleChildScrollView(
@@ -78,8 +76,6 @@ class _SecondPageState extends State<SecondPage> {
                     }).toList(),
               ),
               const SizedBox(height: 50),
-
-              // Hoverable Kite with Glow
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -111,13 +107,9 @@ class _SecondPageState extends State<SecondPage> {
                             builder: (BuildContext context) {
                               return AlertDialog(
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(
-                                    10,
-                                  ), // Rounded corners
+                                  borderRadius: BorderRadius.circular(10),
                                 ),
-                                backgroundColor: Colors.white.withOpacity(
-                                  0.9,
-                                ), // Transparent effect
+                                backgroundColor: Colors.white.withOpacity(0.9),
                                 contentPadding: EdgeInsets.symmetric(
                                   horizontal: 20,
                                   vertical: 20,
@@ -130,18 +122,15 @@ class _SecondPageState extends State<SecondPage> {
                                         CrossAxisAlignment.center,
                                     children: [
                                       SizedBox(height: 20),
-                                      // Title
                                       RichText(
                                         text: TextSpan(
                                           children: [
                                             TextSpan(
-                                              text:
-                                                  "FoodGo", // Change title dynamically
+                                              text: "FoodGo",
                                               style: TextStyle(
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.bold,
-                                                color:
-                                                    Colors.blue, // Title color
+                                                color: Colors.blue,
                                               ),
                                             ),
                                           ],
@@ -177,13 +166,11 @@ class _SecondPageState extends State<SecondPage> {
                                         text: TextSpan(
                                           children: [
                                             TextSpan(
-                                              text:
-                                                  "FoodGo", // Change title dynamically
+                                              text: "FoodGo",
                                               style: TextStyle(
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.bold,
-                                                color:
-                                                    Colors.blue, // Title color
+                                                color: Colors.blue,
                                               ),
                                             ),
                                           ],
@@ -219,13 +206,11 @@ class _SecondPageState extends State<SecondPage> {
                                         text: TextSpan(
                                           children: [
                                             TextSpan(
-                                              text:
-                                                  "FoodGo", // Change title dynamically
+                                              text: "FoodGo",
                                               style: TextStyle(
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.bold,
-                                                color:
-                                                    Colors.blue, // Title color
+                                                color: Colors.blue,
                                               ),
                                             ),
                                           ],
@@ -257,7 +242,6 @@ class _SecondPageState extends State<SecondPage> {
                         child: Stack(
                           alignment: Alignment.center,
                           children: [
-                            // Outer Glow Effect
                             ClipPath(
                               clipper: RoundedKiteClipper(),
                               child: AnimatedContainer(
@@ -278,8 +262,6 @@ class _SecondPageState extends State<SecondPage> {
                                 ),
                               ),
                             ),
-
-                            // Main Rounded Diamond Shape
                             ClipPath(
                               clipper: RoundedKiteClipper(),
                               child: AnimatedContainer(
@@ -314,24 +296,19 @@ class _SecondPageState extends State<SecondPage> {
   }
 }
 
-// Custom Clipper for Rounded Kite (Diamond) Shape
 class RoundedKiteClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     Path path = Path();
-    double radius = size.width * 0.2; // Controls roundness of corners
+    double radius = size.width * 0.2;
 
-    // Move to top center
     path.moveTo(size.width / 2, 0);
 
-    // Top-left curve
     path.quadraticBezierTo(0, 0, 0, size.height / 2 - radius);
     path.quadraticBezierTo(0, size.height / 2, 0 + radius, size.height / 2);
 
-    // Bottom-left curve
     path.quadraticBezierTo(0, size.height, size.width / 2, size.height);
 
-    // Bottom-right curve
     path.quadraticBezierTo(
       size.width,
       size.height,
@@ -345,7 +322,6 @@ class RoundedKiteClipper extends CustomClipper<Path> {
       size.height / 2,
     );
 
-    // Closing the path with top-right curve
     path.quadraticBezierTo(size.width, 0, size.width / 2, 0);
 
     path.close();
