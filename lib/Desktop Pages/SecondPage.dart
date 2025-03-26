@@ -13,8 +13,9 @@ class _SecondPageState extends State<SecondPage> {
 
   final List<Map<String, String>> workItems = [
     {
-      'title': 'airops',
-      'subtitle': 'LLM workflows that drive growth',
+      'title': 'CYBERFICTION',
+      'subtitle':
+          'A simple website built with HTML, CSS, and JavaScript that features a 3D-looking image effect that moves when the user scrolls.',
       'videoAsset': 'assets/videos/0303.mp4',
     },
     {
