@@ -19,14 +19,16 @@ class _SecondPageState extends State<SecondPage> {
       'videoAsset': 'assets/videos/0303.mp4',
     },
     {
-      'title': 'prisma',
-      'subtitle': 'An innovative online school',
+      'title': 'ZELT CLONE',
+      'subtitle':
+          'A fully responsive clone of the Zelt website, built using HTML, CSS, and JavaScript.',
       'videoAsset': 'assets/videos/0307.mp4',
     },
     {
-      'title': 'EMERITUS',
-      'subtitle': 'An online education platform',
-      'videoAsset': 'assets/videos/0307.mp4',
+      'title': 'FoodGo',
+      'subtitle':
+          'FoodGo is a mobile app designed to satisfy your cravings instantly. Order from a wide variety of fast food options—burgers, pizzas, fries, and more—with quick doorstep delivery, bringing convenience and deliciousness right to you.',
+      'videoAsset': 'assets/images/foodgo.png',
     },
     {
       'title': 'RetroAlly',

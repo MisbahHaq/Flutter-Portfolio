@@ -106,16 +106,13 @@ class _WorkCardState extends State<WorkCard> {
                   const SizedBox(height: 5),
                   Container(
                     width: 200,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 190),
-                      child: Text(
-                        widget.subtitle,
-                        textAlign: TextAlign.start,
-                        softWrap: true,
-                        style: GoogleFonts.montserrat(
-                          fontSize: 14,
-                          color: Colors.black,
-                        ),
+                    child: Text(
+                      widget.subtitle,
+                      textAlign: TextAlign.start,
+                      softWrap: true,
+                      style: GoogleFonts.montserrat(
+                        fontSize: 14,
+                        color: Colors.black,
                       ),
                     ),
                   ),
