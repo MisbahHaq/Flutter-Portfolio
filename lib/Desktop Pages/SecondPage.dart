@@ -72,8 +72,7 @@ class _SecondPageState extends State<SecondPage> {
                         child: WorkCard(
                           title: item['title']!,
                           subtitle: item['subtitle']!,
-
-                          mediaAsset: item['mediaAsset']!,
+                          videoAsset: item['mediaAsset']!,
                         ),
                       );
                     }).toList(),

@@ -5,13 +5,15 @@ import 'package:video_player/video_player.dart';
 class WorkCard extends StatefulWidget {
   final String title;
   final String subtitle;
-  final String mediaAsset;
+  final String? imageAsset; // Image path removed
+  final String? videoAsset; // Local asset video path
 
   const WorkCard({
     super.key,
     required this.title,
     required this.subtitle,
-    required this.mediaAsset,
+    this.imageAsset, // Now nullable
+    this.videoAsset, // Now nullable
   });
 
   @override
@@ -19,31 +21,27 @@ class WorkCard extends StatefulWidget {
 }
 
 class _WorkCardState extends State<WorkCard> {
-  VideoPlayerController? _controller;
+  late VideoPlayerController _controller;
   bool isHovered = false;
-  bool isImage = false;
 
   @override
   void initState() {
     super.initState();
-    isImage =
-        widget.mediaAsset.endsWith('.png') ||
-        widget.mediaAsset.endsWith('.jpg') ||
-        widget.mediaAsset.endsWith('.jpeg');
-
-    if (!isImage) {
-      _controller = VideoPlayerController.asset(widget.mediaAsset)
+    if (widget.videoAsset != null) {
+      _controller = VideoPlayerController.asset(widget.videoAsset!)
         ..initialize().then((_) {
-          setState(() {});
-          _controller!.setLooping(true);
-          _controller!.play();
+          setState(() {}); // Update UI once video is initialized
+          _controller.setLooping(true);
+          _controller.play(); // Auto-play the video
         });
     }
   }
 
   @override
   void dispose() {
-    _controller?.dispose();
+    if (widget.videoAsset != null) {
+      _controller.dispose();
+    }
     super.dispose();
   }
 
@@ -66,18 +64,21 @@ class _WorkCardState extends State<WorkCard> {
         width: cardWidth,
         child: Stack(
           children: [
+            // **Shadow Background (Less Width)**
             Positioned.fill(
               child: Align(
                 alignment: Alignment.center,
                 child: Container(
-                  width: cardWidth * 0.96,
-                  height: 550,
+                  width: cardWidth * 0.96, // Reduce shadow width
+                  height: 350,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black26,
-                        blurRadius: isHovered ? 6 : 3,
+                        spreadRadius: 0,
+                        blurRadius:
+                            isHovered ? 6 : 3, // Slightly increased blur
                         offset:
                             isHovered ? const Offset(2, 4) : const Offset(2, 2),
                       ),
@@ -86,23 +87,21 @@ class _WorkCardState extends State<WorkCard> {
                 ),
               ),
             ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child:
-                  isImage
-                      ? Image.asset(
-                        widget.mediaAsset,
-                        width: cardWidth,
-                        height: 500,
-                        fit: BoxFit.cover,
-                      )
-                      : (_controller != null && _controller!.value.isInitialized
-                          ? AspectRatio(
-                            aspectRatio: _controller!.value.aspectRatio,
-                            child: VideoPlayer(_controller!),
-                          )
-                          : const Center(child: CircularProgressIndicator())),
-            ),
+
+            // **Video Player (if available)**
+            if (widget.videoAsset != null)
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child:
+                    _controller.value.isInitialized
+                        ? AspectRatio(
+                          aspectRatio: _controller.value.aspectRatio,
+                          child: VideoPlayer(_controller),
+                        )
+                        : const Center(child: CircularProgressIndicator()),
+              ),
+
+            // **Text Overlay**
             Positioned(
               top: 10,
               left: 10,
@@ -114,20 +113,16 @@ class _WorkCardState extends State<WorkCard> {
                     style: GoogleFonts.montserrat(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.lightBlueAccent,
+                      color: Colors.white,
                     ),
                   ),
                   const SizedBox(height: 5),
-                  SizedBox(
-                    width: cardWidth * 0.8,
-                    child: Text(
-                      widget.subtitle,
-                      textAlign: TextAlign.start,
-                      softWrap: true,
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        color: Colors.black,
-                      ),
+                  Text(
+                    widget.subtitle,
+                    softWrap: true,
+                    style: GoogleFonts.montserrat(
+                      fontSize: 14,
+                      color: Colors.white70,
                     ),
                   ),
                 ],
