@@ -15,25 +15,31 @@ class _SecondPageState extends State<SecondPage> {
   final List<Map<String, String>> workItems = [
     {
       'title': 'CYBERFICTION',
-      'subtitle':
-          'A simple website built with HTML, CSS, and JavaScript that features a 3D-looking image effect that moves when the user scrolls.',
+      'subtitle': '',
       'mediaAsset': 'assets/videos/0303.mp4',
+      'description':
+          'A website with a 3D scrolling effect built using JavaScript.',
     },
     {
       'title': 'ZELT CLONE',
-      'subtitle':
-          'A fully responsive clone of the Zelt website, built using HTML, CSS, and JavaScript.',
+      'subtitle': '',
       'mediaAsset': 'assets/videos/0307.mp4',
+      'description':
+          'A website with a 3D scrolling effect built using JavaScript.',
     },
     {
       'title': 'FOODGO',
       'subtitle': '',
       'mediaAsset': 'assets/videos/foodgo.mp4',
+      'description':
+          'A website with a 3D scrolling effect built using JavaScript.',
     },
     {
       'title': 'BLINKIT CLONE',
       'subtitle': '',
       'mediaAsset': 'assets/videos/blinkit.mp4',
+      'description':
+          'A website with a 3D scrolling effect built using JavaScript.',
     },
   ];
 
@@ -83,6 +89,7 @@ class _SecondPageState extends State<SecondPage> {
                             title: item['title']!,
                             subtitle: item['subtitle']!,
                             videoAsset: item['mediaAsset']!,
+                            description: item['description']!,
                             isExpanded: expandedIndex == index,
                           ),
                         ),

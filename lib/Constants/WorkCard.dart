@@ -6,6 +6,7 @@ class WorkCard extends StatefulWidget {
   final String title;
   final String subtitle;
   final String? videoAsset;
+  final String? description; // New description field
   final bool isExpanded;
 
   const WorkCard({
@@ -13,6 +14,7 @@ class WorkCard extends StatefulWidget {
     required this.title,
     required this.subtitle,
     this.videoAsset,
+    this.description, // Accepting description
     required this.isExpanded,
   });
 
@@ -55,7 +57,7 @@ class _WorkCardState extends State<WorkCard> {
       width: cardWidth,
       height: cardHeight,
       decoration: BoxDecoration(
-        color: Colors.black,
+        color: Colors.transparent,
         borderRadius: BorderRadius.circular(10),
         boxShadow: [
           BoxShadow(
@@ -67,7 +69,6 @@ class _WorkCardState extends State<WorkCard> {
       ),
       child: Stack(
         children: [
-          // Video Player
           if (widget.videoAsset != null)
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
@@ -79,8 +80,6 @@ class _WorkCardState extends State<WorkCard> {
                       )
                       : const Center(child: CircularProgressIndicator()),
             ),
-
-          // Text Overlay
           Positioned(
             top: 10,
             left: 10,
@@ -107,9 +106,7 @@ class _WorkCardState extends State<WorkCard> {
               ],
             ),
           ),
-
-          // Expansion Indicator
-          if (widget.isExpanded)
+          if (widget.isExpanded && widget.description != null)
             Center(
               child: Container(
                 padding: const EdgeInsets.all(10),
@@ -118,7 +115,8 @@ class _WorkCardState extends State<WorkCard> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
-                  "Expanded View",
+                  widget.description!,
+                  textAlign: TextAlign.center,
                   style: GoogleFonts.montserrat(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
