@@ -69,10 +69,8 @@ class _SecondPageState extends State<SecondPage> {
                 alignment: WrapAlignment.center,
                 children:
                     workItems.asMap().entries.map((entry) {
-                      int index = entry.key; // Get the index
-                      Map<String, String> item =
-                          entry.value; // Get the item data
-
+                      int index = entry.key;
+                      Map<String, String> item = entry.value;
                       return GestureDetector(
                         onTap: () {
                           setState(() {
