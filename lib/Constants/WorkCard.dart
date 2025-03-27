@@ -7,6 +7,7 @@ class WorkCard extends StatefulWidget {
   final String subtitle;
   final String? videoAsset;
   final String? description;
+  final String date;
   final bool isExpanded;
 
   const WorkCard({
@@ -15,6 +16,7 @@ class WorkCard extends StatefulWidget {
     required this.subtitle,
     this.videoAsset,
     this.description,
+    required this.date,
     required this.isExpanded,
   });
 
@@ -116,20 +118,21 @@ class _WorkCardState extends State<WorkCard> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       widget.title,
                       style: GoogleFonts.montserrat(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                        color: Colors.white,
                       ),
                     ),
                     SizedBox(height: 20),
                     Text(
-                      "Date",
+                      widget.date,
                       style: GoogleFonts.montserrat(
-                        fontSize: 20,
+                        fontSize: 15,
                         fontWeight: FontWeight.normal,
                         color: Colors.grey,
                       ),
