@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/Constants/SplashScreen.dart';
 import 'package:portfolio/Desktop%20Pages/FirstPage.dart';
 import 'package:portfolio/Desktop%20Pages/HomePage.dart';
 import 'package:portfolio/Desktop%20Pages/SecondPage.dart';
@@ -12,6 +13,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: HomePage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: SplashScreen());
   }
 }
