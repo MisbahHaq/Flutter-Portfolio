@@ -6,7 +6,7 @@ class WorkCard extends StatefulWidget {
   final String title;
   final String subtitle;
   final String? videoAsset;
-  final String? description; // New description field
+  final String? description;
   final bool isExpanded;
 
   const WorkCard({
@@ -14,7 +14,7 @@ class WorkCard extends StatefulWidget {
     required this.title,
     required this.subtitle,
     this.videoAsset,
-    this.description, // Accepting description
+    this.description,
     required this.isExpanded,
   });
 
