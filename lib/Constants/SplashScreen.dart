@@ -19,9 +19,8 @@ class _SplashScreenState extends State<SplashScreen>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 3),
-    )..repeat(); // Continuous rotation
+    )..repeat();
 
-    // Navigate to home page after 3 seconds
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.of(
         context,
@@ -70,36 +69,33 @@ class _SplashScreenState extends State<SplashScreen>
     );
   }
 
-  // Function to apply 3D transformation
   Matrix4 _get3DTransform(double angle) {
     return Matrix4.identity()
-      ..setEntry(3, 2, 0.001) // Perspective effect
-      ..rotateX(angle) // Rotate on X-axis
-      ..rotateY(angle); // Rotate on Y-axis
+      ..setEntry(3, 2, 0.001)
+      ..rotateX(angle)
+      ..rotateY(angle);
   }
 
-  // Function to build a simulated 3D Rubik's Cube
   Widget _buildRubiksCube() {
     return Stack(
       alignment: Alignment.center,
       children: [
-        _buildCubeFace(Colors.red, pi / 2, 0), // Front face
-        _buildCubeFace(Colors.blue, -pi / 2, 0), // Back face
-        _buildCubeFace(Colors.green, 0, pi / 2), // Left face
-        _buildCubeFace(Colors.yellow, 0, -pi / 2), // Right face
-        _buildCubeFace(Colors.orange, -pi / 2, pi), // Top face
-        _buildCubeFace(Colors.white, pi / 2, pi), // Bottom face
+        _buildCubeFace(Colors.red, pi / 2, 0),
+        _buildCubeFace(Colors.blue, -pi / 2, 0),
+        _buildCubeFace(Colors.green, 0, pi / 2),
+        _buildCubeFace(Colors.yellow, 0, -pi / 2),
+        _buildCubeFace(Colors.orange, -pi / 2, pi),
+        _buildCubeFace(Colors.white, pi / 2, pi),
       ],
     );
   }
 
-  // Function to create a single face of the Rubik's Cube
   Widget _buildCubeFace(Color color, double rotateX, double rotateY) {
     return Transform(
       alignment: Alignment.center,
       transform:
           Matrix4.identity()
-            ..setEntry(3, 2, 0.001) // Perspective
+            ..setEntry(3, 2, 0.001)
             ..rotateX(rotateX)
             ..rotateY(rotateY),
       child: Container(
