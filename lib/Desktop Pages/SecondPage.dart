@@ -18,28 +18,28 @@ class _SecondPageState extends State<SecondPage> {
       'subtitle': '',
       'mediaAsset': 'assets/videos/0303.mp4',
       'description':
-          'A website with a 3D scrolling effect built using JavaScript.',
+          'This is a lightweight and interactive website developed using HTML, CSS, and JavaScript, designed to provide an engaging visual experience. It features a dynamic 3D-like image effect that responds to user interactions, specifically movement triggered by scrolling. As users navigate through the page, the images appear to shift or create an illusion of depth, enhancing the overall aesthetic appeal.',
     },
     {
       'title': 'ZELT CLONE',
       'subtitle': '',
       'mediaAsset': 'assets/videos/0307.mp4',
       'description':
-          'A website with a 3D scrolling effect built using JavaScript.',
+          'A fully responsive replica of the Zelt website, meticulously crafted using HTML, CSS, and JavaScript. This project ensures seamless adaptability across various devices, delivering a visually consistent and user-friendly experience. Through precise styling and interactive elements, it closely mirrors the original design while maintaining optimal performance and responsiveness.',
     },
     {
       'title': 'FOODGO',
       'subtitle': '',
       'mediaAsset': 'assets/videos/foodgo.mp4',
       'description':
-          'A website with a 3D scrolling effect built using JavaScript.',
+          'FoodGo is a mobile app designed to satisfy your cravings instantly. Order from a wide variety of fast food options—burgers, pizzas, fries, and more—with quick doorstep delivery, bringing convenience and deliciousness right to you.',
     },
     {
       'title': 'BLINKIT CLONE',
       'subtitle': '',
       'mediaAsset': 'assets/videos/blinkit.mp4',
       'description':
-          'A website with a 3D scrolling effect built using JavaScript.',
+          'Blinkit Clone is a mobile app designed to bring grocery shopping to your doorstep in no time. It allows users to shop for groceries, fresh produce, daily essentials, and more with instant delivery, offering convenience at your fingertips.',
     },
   ];
 
