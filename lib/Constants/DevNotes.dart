@@ -52,13 +52,10 @@ class _DevNotesPageState extends State<DevNotesPage> {
               ],
             ),
           ),
-
-          // Foreground Content (Remains Clear)
           Positioned(
             top: 200,
             child: Column(
               children: [
-                // Title
                 Text(
                   "DEV NOTES",
                   style: TextStyle(
@@ -68,8 +65,6 @@ class _DevNotesPageState extends State<DevNotesPage> {
                   ),
                 ),
                 const SizedBox(height: 20),
-
-                // Card Content
                 Container(
                   width: 400,
                   padding: const EdgeInsets.all(20),
@@ -77,10 +72,7 @@ class _DevNotesPageState extends State<DevNotesPage> {
                     color: Colors.white.withOpacity(0.9),
                     borderRadius: BorderRadius.circular(15),
                     boxShadow: [
-                      BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 10, // Soft Shadow
-                      ),
+                      BoxShadow(color: Colors.black12, blurRadius: 10),
                     ],
                   ),
                   child: Column(
@@ -90,10 +82,7 @@ class _DevNotesPageState extends State<DevNotesPage> {
                         textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 16, color: Colors.black87),
                       ),
-
                       const SizedBox(height: 20),
-
-                      // Switch with Icon
                       GestureDetector(
                         onTap: () {
                           setState(() {
@@ -126,7 +115,6 @@ class _DevNotesPageState extends State<DevNotesPage> {
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    // Email Text with Icon
                     RichText(
                       text: TextSpan(
                         style: const TextStyle(
@@ -156,13 +144,10 @@ class _DevNotesPageState extends State<DevNotesPage> {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 40),
-
-                    // Social Media Icons
+                    const SizedBox(height: 30),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // GitHub Button
                         IconButton(
                           onPressed:
                               () => _launchUrl("https://github.com/MisbahHaq"),
@@ -173,8 +158,6 @@ class _DevNotesPageState extends State<DevNotesPage> {
                           ),
                         ),
                         const SizedBox(width: 20),
-
-                        // LinkedIn Button (Replace with your profile link)
                         IconButton(
                           onPressed:
                               () => _launchUrl(
