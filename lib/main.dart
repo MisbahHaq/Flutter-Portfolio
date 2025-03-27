@@ -1,9 +1,6 @@
+import 'package:Portfolio/Constants/SplashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/Constants/SplashScreen.dart';
-import 'package:portfolio/Desktop%20Pages/FirstPage.dart';
-import 'package:portfolio/Desktop%20Pages/HomePage.dart';
-import 'package:portfolio/Desktop%20Pages/SecondPage.dart';
 
 void main() {
   GoogleFonts.config.allowRuntimeFetching = false;

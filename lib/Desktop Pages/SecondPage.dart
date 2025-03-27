@@ -1,7 +1,7 @@
+import 'package:Portfolio/Constants/FontWidgets.dart';
+import 'package:Portfolio/Constants/WorkCard.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/Constants/FontWidgets.dart';
-import 'package:portfolio/Constants/WorkCard.dart';
 
 class SecondPage extends StatefulWidget {
   @override

@@ -1,8 +1,8 @@
+import 'package:Portfolio/Constants/DevNotes.dart';
+import 'package:Portfolio/Constants/Navbar.dart';
+import 'package:Portfolio/Desktop%20Pages/FirstPage.dart';
+import 'package:Portfolio/Desktop%20Pages/SecondPage.dart' show SecondPage;
 import 'package:flutter/material.dart';
-import 'package:portfolio/Constants/DevNotes.dart';
-import 'package:portfolio/Constants/Navbar.dart';
-import 'package:portfolio/Desktop%20Pages/FirstPage.dart';
-import 'package:portfolio/Desktop%20Pages/SecondPage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

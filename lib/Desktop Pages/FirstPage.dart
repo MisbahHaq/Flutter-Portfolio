@@ -1,7 +1,7 @@
 import 'dart:async';
+import 'package:Portfolio/Constants/FontWidgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/Constants/FontWidgets.dart';
 
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
