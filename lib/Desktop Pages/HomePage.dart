@@ -15,7 +15,6 @@ class _HomePageState extends State<HomePage> {
   bool isDarkMode = false;
   final ScrollController _scrollController = ScrollController();
 
-  // Define GlobalKeys for sections
   final GlobalKey _homeKey = GlobalKey();
   final GlobalKey _workKey = GlobalKey();
   final GlobalKey _devNotesKey = GlobalKey();
