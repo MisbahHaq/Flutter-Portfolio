@@ -33,7 +33,7 @@ class _SecondPageState extends State<SecondPage> {
       'title': 'FOODGO',
       'subtitle': '',
       'mediaAsset': 'assets/videos/foodgo.mp4',
-      'date': 'February 2025 - March 2025',
+      'date': 'January 2025 - February 2025',
       'description':
           'FoodGo is a mobile app designed to satisfy your cravings instantly. Order from a wide variety of fast food options—burgers, pizzas, fries, and more—with quick doorstep delivery, bringing convenience and deliciousness right to you.',
     },
@@ -41,7 +41,7 @@ class _SecondPageState extends State<SecondPage> {
       'title': 'BLINKIT CLONE',
       'subtitle': '',
       'mediaAsset': 'assets/videos/blinkit.mp4',
-      'date': 'February 2025 - March 2025',
+      'date': 'January 2025 - February 2025',
       'description':
           'Blinkit Clone is a mobile app designed to bring grocery shopping to your doorstep in no time. It allows users to shop for groceries, fresh produce, daily essentials, and more with instant delivery, offering convenience at your fingertips.',
     },
@@ -150,7 +150,7 @@ class _SecondPageState extends State<SecondPage> {
                                         text: TextSpan(
                                           children: [
                                             TextSpan(
-                                              text: "FoodGo",
+                                              text: "CineFlix 🎬🎟️",
                                               style: TextStyle(
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.bold,
@@ -160,9 +160,9 @@ class _SecondPageState extends State<SecondPage> {
                                           ],
                                         ),
                                       ),
-                                      SizedBox(height: 5),
+                                      SizedBox(height: 8),
                                       Text(
-                                        "November 2022 - August 2023",
+                                        "January 2025 - February 2025",
                                         style: TextStyle(
                                           fontSize: 14,
                                           color: Colors.black54,
@@ -181,7 +181,7 @@ class _SecondPageState extends State<SecondPage> {
                                         ),
                                         child: Text(
                                           textAlign: TextAlign.center,
-                                          "FoodGo is a mobile app designed to satisfy your cravings instantly. Order from a wide variety of fast food options—burgers, pizzas, fries, and more—with quick doorstep delivery, bringing convenience and deliciousness right to you.",
+                                          "CineFlix is a mobile app designed to enhance your movie-going experience. Browse the latest movies, check showtimes, and book tickets instantly—all from the comfort of your phone.",
                                           style: AppWidget.NavStyle2(context),
                                         ),
                                       ),
@@ -190,7 +190,7 @@ class _SecondPageState extends State<SecondPage> {
                                         text: TextSpan(
                                           children: [
                                             TextSpan(
-                                              text: "FoodGo",
+                                              text: "Briefly",
                                               style: TextStyle(
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.bold,
@@ -200,9 +200,9 @@ class _SecondPageState extends State<SecondPage> {
                                           ],
                                         ),
                                       ),
-                                      SizedBox(height: 5),
+                                      SizedBox(height: 8),
                                       Text(
-                                        "November 2022 - August 2023",
+                                        "January 2025 - February 2025",
                                         style: TextStyle(
                                           fontSize: 14,
                                           color: Colors.black54,
@@ -221,7 +221,7 @@ class _SecondPageState extends State<SecondPage> {
                                         ),
                                         child: Text(
                                           textAlign: TextAlign.center,
-                                          "FoodGo is a mobile app designed to satisfy your cravings instantly. Order from a wide variety of fast food options—burgers, pizzas, fries, and more—with quick doorstep delivery, bringing convenience and deliciousness right to you.",
+                                          "Briefly is a mobile application that delivers the latest news based on your selected categories. With real-time updates, an intuitive interface, and a seamless reading experience, you can stay informed on the topics that matter most to you.",
                                           style: AppWidget.NavStyle2(context),
                                         ),
                                       ),
@@ -230,7 +230,7 @@ class _SecondPageState extends State<SecondPage> {
                                         text: TextSpan(
                                           children: [
                                             TextSpan(
-                                              text: "FoodGo",
+                                              text: "S'NAIL",
                                               style: TextStyle(
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.bold,
@@ -240,9 +240,9 @@ class _SecondPageState extends State<SecondPage> {
                                           ],
                                         ),
                                       ),
-                                      SizedBox(height: 5),
+                                      SizedBox(height: 8),
                                       Text(
-                                        "November 2022 - August 2023",
+                                        "March 2025 - Present",
                                         style: TextStyle(
                                           fontSize: 14,
                                           color: Colors.black54,
@@ -252,7 +252,7 @@ class _SecondPageState extends State<SecondPage> {
                                       SizedBox(height: 15),
                                       Text(
                                         textAlign: TextAlign.center,
-                                        "FoodGo is a mobile app designed to satisfy your cravings instantly. Order from a wide variety of fast food options—burgers, pizzas, fries, and more—with quick doorstep delivery, bringing convenience and deliciousness right to you.",
+                                        "S’NAIL is a stylish and user-friendly nail polish shopping app designed to provide a seamless and enjoyable experience for beauty enthusiasts. With an elegant interface, the app offers a wide range of nail polish shades, finishes, and brands to suit every style. ",
                                         style: AppWidget.NavStyle2(context),
                                       ),
                                       SizedBox(height: 20),
