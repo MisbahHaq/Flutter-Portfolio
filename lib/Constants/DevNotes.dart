@@ -28,12 +28,10 @@ class _DevNotesPageState extends State<DevNotesPage> {
       body: Stack(
         alignment: Alignment.center,
         children: [
-          // Background Gradient
           Positioned(
             top: 80,
             child: Stack(
               children: [
-                // Apply Blur Only to This Text
                 Container(
                   child: ClipRect(
                     child: Opacity(

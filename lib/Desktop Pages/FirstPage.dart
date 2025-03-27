@@ -70,7 +70,6 @@ class _FirstPageState extends State<FirstPage>
               return Column(
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Center(
                         child: SlideTransition(
@@ -82,27 +81,6 @@ class _FirstPageState extends State<FirstPage>
                                 style: AppWidget.HugeStyle(context),
                               );
                             },
-                          ),
-                        ),
-                      ),
-                      Flexible(
-                        child: Padding(
-                          padding: EdgeInsets.only(
-                            right: screenWidth > 600 ? 200 : 30,
-                            top: 20,
-                          ),
-                          child: SlideTransition(
-                            position: _webDevAnimation,
-                            child: Builder(
-                              builder: (context) {
-                                return Text(
-                                  "Web & App Development",
-                                  style: AppWidget.MidStyle(context),
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 1,
-                                );
-                              },
-                            ),
                           ),
                         ),
                       ),

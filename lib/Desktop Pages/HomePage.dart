@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Container(
                       key: _homeKey,
-                      height: MediaQuery.of(context).size.height,
+                      height: MediaQuery.of(context).size.height / 1,
                       child: FirstPage(),
                     ),
                     Container(
