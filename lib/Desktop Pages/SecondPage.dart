@@ -10,6 +10,7 @@ class SecondPage extends StatefulWidget {
 
 class _SecondPageState extends State<SecondPage> {
   bool isHovered = false;
+  int? expandedIndex;
 
   final List<Map<String, String>> workItems = [
     {
@@ -61,16 +62,29 @@ class _SecondPageState extends State<SecondPage> {
                 runSpacing: 20,
                 alignment: WrapAlignment.center,
                 children:
-                    workItems.map((item) {
-                      return SizedBox(
-                        width:
-                            screenWidth < 600
-                                ? screenWidth - 40
-                                : (screenWidth / 2) - 40,
-                        child: WorkCard(
-                          title: item['title']!,
-                          subtitle: item['subtitle']!,
-                          videoAsset: item['mediaAsset']!,
+                    workItems.asMap().entries.map((entry) {
+                      int index = entry.key; // Get the index
+                      Map<String, String> item =
+                          entry.value; // Get the item data
+
+                      return GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            expandedIndex =
+                                (expandedIndex == index) ? null : index;
+                          });
+                        },
+                        child: SizedBox(
+                          width:
+                              screenWidth < 600
+                                  ? screenWidth - 40
+                                  : (screenWidth / 2) - 40,
+                          child: WorkCard(
+                            title: item['title']!,
+                            subtitle: item['subtitle']!,
+                            videoAsset: item['mediaAsset']!,
+                            isExpanded: expandedIndex == index,
+                          ),
                         ),
                       );
                     }).toList(),

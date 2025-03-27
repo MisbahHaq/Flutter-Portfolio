@@ -5,15 +5,15 @@ import 'package:video_player/video_player.dart';
 class WorkCard extends StatefulWidget {
   final String title;
   final String subtitle;
-  final String? imageAsset; // Image path removed
-  final String? videoAsset; // Local asset video path
+  final String? videoAsset;
+  final bool isExpanded;
 
   const WorkCard({
     super.key,
     required this.title,
     required this.subtitle,
-    this.imageAsset, // Now nullable
-    this.videoAsset, // Now nullable
+    this.videoAsset,
+    required this.isExpanded,
   });
 
   @override
@@ -22,7 +22,6 @@ class WorkCard extends StatefulWidget {
 
 class _WorkCardState extends State<WorkCard> {
   late VideoPlayerController _controller;
-  bool isHovered = false;
 
   @override
   void initState() {
@@ -30,9 +29,9 @@ class _WorkCardState extends State<WorkCard> {
     if (widget.videoAsset != null) {
       _controller = VideoPlayerController.asset(widget.videoAsset!)
         ..initialize().then((_) {
-          setState(() {}); // Update UI once video is initialized
+          setState(() {});
           _controller.setLooping(true);
-          _controller.play(); // Auto-play the video
+          _controller.play();
         });
     }
   }
@@ -47,89 +46,88 @@ class _WorkCardState extends State<WorkCard> {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double cardWidth = screenWidth > 600 ? 400 : screenWidth * 0.9;
+    double cardWidth = widget.isExpanded ? 450 : 350;
+    double cardHeight = widget.isExpanded ? 400 : 300;
 
-    return MouseRegion(
-      onEnter: (_) => setState(() => isHovered = true),
-      onExit: (_) => setState(() => isHovered = false),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 250),
-        curve: Curves.easeOut,
-        transform:
-            isHovered
-                ? Matrix4.translationValues(0, -5, 0)
-                : Matrix4.identity(),
-        height: 350,
-        width: cardWidth,
-        child: Stack(
-          children: [
-            // **Shadow Background (Less Width)**
-            Positioned.fill(
-              child: Align(
-                alignment: Alignment.center,
-                child: Container(
-                  width: cardWidth * 0.96, // Reduce shadow width
-                  height: 350,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black26,
-                        spreadRadius: 0,
-                        blurRadius:
-                            isHovered ? 6 : 3, // Slightly increased blur
-                        offset:
-                            isHovered ? const Offset(2, 4) : const Offset(2, 2),
-                      ),
-                    ],
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+      width: cardWidth,
+      height: cardHeight,
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            blurRadius: 10,
+            spreadRadius: 3,
+          ),
+        ],
+      ),
+      child: Stack(
+        children: [
+          // Video Player
+          if (widget.videoAsset != null)
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child:
+                  _controller.value.isInitialized
+                      ? AspectRatio(
+                        aspectRatio: _controller.value.aspectRatio,
+                        child: VideoPlayer(_controller),
+                      )
+                      : const Center(child: CircularProgressIndicator()),
+            ),
+
+          // Text Overlay
+          Positioned(
+            top: 10,
+            left: 10,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  widget.title,
+                  style: GoogleFonts.montserrat(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 5),
+                Text(
+                  widget.subtitle,
+                  softWrap: true,
+                  style: GoogleFonts.montserrat(
+                    fontSize: 14,
+                    color: Colors.white70,
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          // Expansion Indicator
+          if (widget.isExpanded)
+            Center(
+              child: Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.black54,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Text(
+                  "Expanded View",
+                  style: GoogleFonts.montserrat(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
                   ),
                 ),
               ),
             ),
-
-            // **Video Player (if available)**
-            if (widget.videoAsset != null)
-              ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child:
-                    _controller.value.isInitialized
-                        ? AspectRatio(
-                          aspectRatio: _controller.value.aspectRatio,
-                          child: VideoPlayer(_controller),
-                        )
-                        : const Center(child: CircularProgressIndicator()),
-              ),
-
-            // **Text Overlay**
-            Positioned(
-              top: 10,
-              left: 10,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    widget.title,
-                    style: GoogleFonts.montserrat(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const SizedBox(height: 5),
-                  Text(
-                    widget.subtitle,
-                    softWrap: true,
-                    style: GoogleFonts.montserrat(
-                      fontSize: 14,
-                      color: Colors.white70,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+        ],
       ),
     );
   }
