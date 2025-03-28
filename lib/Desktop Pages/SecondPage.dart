@@ -52,263 +52,282 @@ class _SecondPageState extends State<SecondPage> {
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.transparent,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+        child: Container(
+          child: ListView(
+            shrinkWrap: true,
+            physics: BouncingScrollPhysics(),
+
             children: [
-              Text(
-                "WORK",
-                style: GoogleFonts.montserrat(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black54,
-                ),
-              ),
-              const SizedBox(height: 40),
-              Wrap(
-                spacing: 20,
-                runSpacing: 20,
-                alignment: WrapAlignment.center,
-                children:
-                    workItems.asMap().entries.map((entry) {
-                      int index = entry.key;
-                      Map<String, String> item = entry.value;
-                      return GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            expandedIndex =
-                                (expandedIndex == index) ? null : index;
-                          });
-                        },
-                        child: SizedBox(
-                          width:
-                              screenWidth < 600
-                                  ? screenWidth - 40
-                                  : (screenWidth / 2) - 40,
-                          child: WorkCard(
-                            title: item['title']!,
-                            subtitle: item['subtitle']!,
-                            videoAsset: item['mediaAsset']!,
-                            description: item['description']!,
-                            date: item['date']!,
-                            isExpanded: expandedIndex == index,
-                          ),
-                        ),
-                      );
-                    }).toList(),
-              ),
-              const SizedBox(height: 50),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  MouseRegion(
-                    onEnter: (_) => setState(() => isHovered = true),
-                    onExit: (_) => setState(() => isHovered = false),
-                    child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 300),
-                      transform:
-                          isHovered
-                              ? Matrix4.translationValues(0, -10, 0)
-                              : Matrix4.identity(),
-                      decoration: BoxDecoration(
-                        boxShadow:
-                            isHovered
-                                ? [
-                                  BoxShadow(
-                                    color: Colors.greenAccent.withOpacity(0.7),
-                                    blurRadius: 25,
-                                    spreadRadius: 4,
-                                  ),
-                                ]
-                                : [],
-                      ),
-                      child: GestureDetector(
-                        onTap: () {
-                          showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return AlertDialog(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                backgroundColor: Colors.white.withOpacity(0.9),
-                                contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 20,
-                                  vertical: 20,
-                                ),
-                                content: ConstrainedBox(
-                                  constraints: BoxConstraints(maxWidth: 350),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      SizedBox(height: 20),
-                                      RichText(
-                                        text: TextSpan(
-                                          children: [
-                                            TextSpan(
-                                              text: "CineFlix 🎬🎟️",
-                                              style: TextStyle(
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.blue,
-                                              ),
-                                            ),
-                                          ],
+                  Text(
+                    "WORK",
+                    style: GoogleFonts.montserrat(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black54,
+                    ),
+                  ),
+                  const SizedBox(height: 40),
+                  Wrap(
+                    spacing: 20,
+                    runSpacing: 20,
+                    alignment: WrapAlignment.center,
+                    children:
+                        workItems.asMap().entries.map((entry) {
+                          int index = entry.key;
+                          Map<String, String> item = entry.value;
+                          return GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                expandedIndex =
+                                    (expandedIndex == index) ? null : index;
+                              });
+                            },
+                            child: SizedBox(
+                              width:
+                                  screenWidth < 600
+                                      ? screenWidth - 40
+                                      : (screenWidth / 2) - 40,
+                              child: WorkCard(
+                                title: item['title']!,
+                                subtitle: item['subtitle']!,
+                                videoAsset: item['mediaAsset']!,
+                                description: item['description']!,
+                                date: item['date']!,
+                                isExpanded: expandedIndex == index,
+                              ),
+                            ),
+                          );
+                        }).toList(),
+                  ),
+                  const SizedBox(height: 50),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      MouseRegion(
+                        onEnter: (_) => setState(() => isHovered = true),
+                        onExit: (_) => setState(() => isHovered = false),
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 300),
+                          transform:
+                              isHovered
+                                  ? Matrix4.translationValues(0, -10, 0)
+                                  : Matrix4.identity(),
+                          decoration: BoxDecoration(
+                            boxShadow:
+                                isHovered
+                                    ? [
+                                      BoxShadow(
+                                        color: Colors.greenAccent.withOpacity(
+                                          0.7,
                                         ),
+                                        blurRadius: 25,
+                                        spreadRadius: 4,
                                       ),
-                                      SizedBox(height: 8),
-                                      Text(
-                                        "January 2025 - February 2025",
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                          color: Colors.black54,
-                                          fontWeight: FontWeight.w500,
-                                        ),
+                                    ]
+                                    : [],
+                          ),
+                          child: GestureDetector(
+                            onTap: () {
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    backgroundColor: Colors.white.withOpacity(
+                                      0.9,
+                                    ),
+                                    contentPadding: EdgeInsets.symmetric(
+                                      horizontal: 20,
+                                      vertical: 20,
+                                    ),
+                                    content: ConstrainedBox(
+                                      constraints: BoxConstraints(
+                                        maxWidth: 350,
                                       ),
-                                      SizedBox(height: 15),
-                                      Container(
-                                        height: 100,
-                                        decoration: BoxDecoration(
-                                          border: Border(
-                                            bottom: BorderSide(
-                                              color: Colors.black,
-                                            ),
-                                          ),
-                                        ),
-                                        child: Text(
-                                          textAlign: TextAlign.center,
-                                          "CineFlix is a mobile app designed to enhance your movie-going experience. Browse the latest movies, check showtimes, and book tickets instantly—all from the comfort of your phone.",
-                                          style: AppWidget.NavStyle2(context),
-                                        ),
-                                      ),
-                                      SizedBox(height: 15),
-                                      RichText(
-                                        text: TextSpan(
-                                          children: [
-                                            TextSpan(
-                                              text: "Briefly",
-                                              style: TextStyle(
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.blue,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      SizedBox(height: 8),
-                                      Text(
-                                        "January 2025 - February 2025",
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                          color: Colors.black54,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                      ),
-                                      SizedBox(height: 15),
-                                      Container(
-                                        height: 100,
-                                        decoration: BoxDecoration(
-                                          border: Border(
-                                            bottom: BorderSide(
-                                              color: Colors.black,
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          SizedBox(height: 20),
+                                          RichText(
+                                            text: TextSpan(
+                                              children: [
+                                                TextSpan(
+                                                  text: "CineFlix 🎬🎟️",
+                                                  style: TextStyle(
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.blue,
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
-                                        ),
-                                        child: Text(
-                                          textAlign: TextAlign.center,
-                                          "Briefly is a mobile application that delivers the latest news based on your selected categories. With real-time updates, an intuitive interface, and a seamless reading experience, you can stay informed on the topics that matter most to you.",
-                                          style: AppWidget.NavStyle2(context),
-                                        ),
-                                      ),
-                                      SizedBox(height: 15),
-                                      RichText(
-                                        text: TextSpan(
-                                          children: [
-                                            TextSpan(
-                                              text: "S'NAIL",
-                                              style: TextStyle(
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.blue,
+                                          SizedBox(height: 8),
+                                          Text(
+                                            "January 2025 - February 2025",
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              color: Colors.black54,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                          SizedBox(height: 15),
+                                          Container(
+                                            height: 100,
+                                            decoration: BoxDecoration(
+                                              border: Border(
+                                                bottom: BorderSide(
+                                                  color: Colors.black,
+                                                ),
                                               ),
                                             ),
-                                          ],
-                                        ),
+                                            child: Text(
+                                              textAlign: TextAlign.center,
+                                              "CineFlix is a mobile app designed to enhance your movie-going experience. Browse the latest movies, check showtimes, and book tickets instantly—all from the comfort of your phone.",
+                                              style: AppWidget.NavStyle2(
+                                                context,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(height: 15),
+                                          RichText(
+                                            text: TextSpan(
+                                              children: [
+                                                TextSpan(
+                                                  text: "Briefly",
+                                                  style: TextStyle(
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.blue,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(height: 8),
+                                          Text(
+                                            "January 2025 - February 2025",
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              color: Colors.black54,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                          SizedBox(height: 15),
+                                          Container(
+                                            height: 100,
+                                            decoration: BoxDecoration(
+                                              border: Border(
+                                                bottom: BorderSide(
+                                                  color: Colors.black,
+                                                ),
+                                              ),
+                                            ),
+                                            child: Text(
+                                              textAlign: TextAlign.center,
+                                              "Briefly is a mobile application that delivers the latest news based on your selected categories. With real-time updates, an intuitive interface, and a seamless reading experience, you can stay informed on the topics that matter most to you.",
+                                              style: AppWidget.NavStyle2(
+                                                context,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(height: 15),
+                                          RichText(
+                                            text: TextSpan(
+                                              children: [
+                                                TextSpan(
+                                                  text: "S'NAIL",
+                                                  style: TextStyle(
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.blue,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(height: 8),
+                                          Text(
+                                            "March 2025 - Present",
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              color: Colors.black54,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                          SizedBox(height: 15),
+                                          Text(
+                                            textAlign: TextAlign.center,
+                                            "S’NAIL is a stylish and user-friendly nail polish shopping app designed to provide a seamless and enjoyable experience for beauty enthusiasts. With an elegant interface, the app offers a wide range of nail polish shades, finishes, and brands to suit every style. ",
+                                            style: AppWidget.NavStyle2(context),
+                                          ),
+                                          SizedBox(height: 20),
+                                        ],
                                       ),
-                                      SizedBox(height: 8),
-                                      Text(
-                                        "March 2025 - Present",
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                          color: Colors.black54,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                      ),
-                                      SizedBox(height: 15),
-                                      Text(
-                                        textAlign: TextAlign.center,
-                                        "S’NAIL is a stylish and user-friendly nail polish shopping app designed to provide a seamless and enjoyable experience for beauty enthusiasts. With an elegant interface, the app offers a wide range of nail polish shades, finishes, and brands to suit every style. ",
-                                        style: AppWidget.NavStyle2(context),
-                                      ),
-                                      SizedBox(height: 20),
-                                    ],
-                                  ),
-                                ),
+                                    ),
+                                  );
+                                },
                               );
                             },
-                          );
-                        },
-                        child: Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            ClipPath(
-                              clipper: RoundedKiteClipper(),
-                              child: AnimatedContainer(
-                                duration: const Duration(milliseconds: 300),
-                                width: isHovered ? 75 : 70,
-                                height: isHovered ? 75 : 70,
-                                decoration: BoxDecoration(
-                                  color: Colors.greenAccent.withOpacity(0.3),
-                                  boxShadow: [
-                                    BoxShadow(
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                ClipPath(
+                                  clipper: RoundedKiteClipper(),
+                                  child: AnimatedContainer(
+                                    duration: const Duration(milliseconds: 300),
+                                    width: isHovered ? 75 : 70,
+                                    height: isHovered ? 75 : 70,
+                                    decoration: BoxDecoration(
                                       color: Colors.greenAccent.withOpacity(
-                                        0.6,
+                                        0.3,
                                       ),
-                                      blurRadius: isHovered ? 30 : 20,
-                                      spreadRadius: isHovered ? 7 : 5,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            ClipPath(
-                              clipper: RoundedKiteClipper(),
-                              child: AnimatedContainer(
-                                duration: const Duration(milliseconds: 300),
-                                width: isHovered ? 65 : 60,
-                                height: isHovered ? 65 : 60,
-                                color: Colors.greenAccent.withOpacity(0.6),
-                                child: Center(
-                                  child: Text(
-                                    "+3",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black87,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.greenAccent.withOpacity(
+                                            0.6,
+                                          ),
+                                          blurRadius: isHovered ? 30 : 20,
+                                          spreadRadius: isHovered ? 7 : 5,
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
-                              ),
+                                ClipPath(
+                                  clipper: RoundedKiteClipper(),
+                                  child: AnimatedContainer(
+                                    duration: const Duration(milliseconds: 300),
+                                    width: isHovered ? 65 : 60,
+                                    height: isHovered ? 65 : 60,
+                                    color: Colors.greenAccent.withOpacity(0.6),
+                                    child: Center(
+                                      child: Text(
+                                        "+3",
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black87,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
+                          ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
                 ],
               ),

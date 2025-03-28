@@ -76,9 +76,12 @@ class _FirstPageState extends State<FirstPage>
                           position: _misbahAnimation,
                           child: Builder(
                             builder: (context) {
-                              return Text(
-                                "Misbah",
-                                style: AppWidget.HugeStyle(context),
+                              return Padding(
+                                padding: const EdgeInsets.only(left: 25),
+                                child: Text(
+                                  "Misbah",
+                                  style: AppWidget.HugeStyle(context),
+                                ),
                               );
                             },
                           ),
@@ -93,9 +96,12 @@ class _FirstPageState extends State<FirstPage>
                         position: _haqueAnimation,
                         child: Builder(
                           builder: (context) {
-                            return Text(
-                              "Haque",
-                              style: AppWidget.HugeStyle(context),
+                            return Padding(
+                              padding: const EdgeInsets.only(right: 25),
+                              child: Text(
+                                "Haque",
+                                style: AppWidget.HugeStyle(context),
+                              ),
                             );
                           },
                         ),
